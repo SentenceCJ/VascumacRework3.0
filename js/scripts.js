@@ -13,3 +13,5 @@ function showDetails(cliniqueId) {
     image.src = `images/${cliniqueId}.png`;
   }
   
+ 
+  
