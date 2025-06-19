@@ -1,0 +1,11 @@
+ajouter bouton sous la tete des chirurgiens pour acceder au doctolib
+
+bouton dans la partie responsive user
+
+fixer bug de ul li dans la partie responsive
+
+changer le nom polyclinique Lyon Nord Rillieux
+
+changer icon parcours patients 
+
+responsivité pour la page contact !!

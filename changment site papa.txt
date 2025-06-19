@@ -1,0 +1,38 @@
+Accueil 
+
+=> viré get in touch  0
+=> partie clinique  0
+
+Equipe 0
+=> enlever en favoriser sur la partie accueil
+=> laissez comme tel 
+=> voir avec jana sur ce que l'on met car copier coller de l'index inutile ??
+
+Pathologies TODO
+=> mettre contenu et vérifier ordre des titres
+
+Parcours patients 0
+
+=> Clean
+
+Actualités 
+
+=> faire page bateau ?
+
+Contact
+
+=> mettre coordonner pour chaque chirurgiens
+=> faire sections personnalisé par chir
+=> mettre addresses et infos des cliniques
+
+Bouton Rendez-Vous 
+
+=> rediriger vers page contact 
+
+quand on clique sur la consultation => arriver sur une page qui explique les documents necessaire 
+
+consentuement eclaire a intégré dans la parcous patient pour l'hospuitalisation 
+
+
+reutiliser le contenu mais en le mettant en ordre par rapport au site actuel lyon vasculaire 
+
