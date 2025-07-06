@@ -1,11 +1,68 @@
-ajouter bouton sous la tete des chirurgiens pour acceder au doctolib
 
-bouton dans la partie responsive user
 
 fixer bug de ul li dans la partie responsive
 
 changer le nom polyclinique Lyon Nord Rillieux
 
-changer icon parcours patients 
+Nos domaines => Ajouter bouton en savoir plus sur chaque section rediriger vers les domaines détaillés
+ => section chirurgies veineuse 
+=> la chirurgie veineuse vise a traiter également les congestions pelviennes
+ => Chirurgie artérielle
+=> mettre en ambulatoire entre parenthese ( eventuellement en ambulatoire = > enlever le avec un retour a dimicile
+La chirurgie artérielle traite les anévrisme et les sténoses artérielle. ( metttre ce début a la place de nutriment etc )
+=> chirurgie dialyse good 
 
-responsivité pour la page contact !!
+=> images des domaines => faire que l'image se fonde ans le site en enlevant les bords etc
+
+
+
+
+Les cliniques => mettre saint charles en derniers => rillieux en deuxieme 
+changer photo polyclinique vers celle de rillieux 
+
+Rediriger les boutons en savoir plus des cliniques vers la partie les cliniques dans la page nous contacter
+
+
+Nav Bar => augmenter la taille 
+
+les cliniques => mettres les trois cote a cote et pas l'une en dessous des autres
+
+changer le double 04 pour saint charles dans la sectons téléphone 
+
+mettre le logo dans le footer 
+
+changer la pollice vers photo london et faire le logo pour tokyo
+
+/!\ Mettre saint charles toujours en dernier et rillieux en second =>  sur toutes les pages 
+
+Regarder pour integré un google analystics eventuellement ?
+
+
+Chirurgie artérielle 
+#ff8585 Couleur de la chirurgies 
+
+Changers les polices pour les mettres en gras sur les sections et mettre police london de partout
+
+Augmenter la taille du bandeau de gauches avec les descriptions 
+
+
+pour les photos sur les chirurgies , proposer panales de photos médical 
+
+
+Mettre en ordre le contenu du site quand on clique sur la sténose => renvoie par la sténose
+ajouter en fin de page un redirections vers la page du SCVE a la fin de chaque type de chirurgies => 
+
+Chirurgie Veineuse => mettre bleu moins aggressif => mettre mem police partout
+
+
+veririfer refiorection hemodialyse car vers paypal ????
+
+Dans la page d'accueil => mettrte la photo de lyon en flouter derriere !
+
+dans la page d'accueil ajouter la gonction palmares et mettre en avant l'intégralite du palmares  ( voir mail bruno ) 
+=> flouter les images pour mettre en avant uniquement les cliniques concernés
+
+Section parcours patients 
+=> retaper la DA pour les urgences et fixer les bugs
+
+changer polycliniques de rillieux par lyon nord
