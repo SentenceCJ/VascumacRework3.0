@@ -7,7 +7,7 @@ https://templatemo.com/tm-555-upright
 
 	Color Codes
 	=============
-	Primary blue: #d13030
+	Primary blue: #f87878
 	Gray text: #666666
 	Light gray nav button bg: #F2F2F2;
 
@@ -23,7 +23,7 @@ div, a, p { color: #666666; }
 p, address { line-height: 1.8; }
 a {	transition: all 0.3s ease; }
 a:hover {
-	color: #d13030;
+	color: #f87878;
 	text-decoration: none;
 }
 
@@ -32,18 +32,18 @@ a:hover {
 .btn-primary {
 	padding: 12px 50px;
     border-radius: 0;
-    background: #d13030;
+    background: #f87878;
     font-size: 1.2rem;
     border: 0;
 }
 
 .btn-primary:hover { background: #068ccf; }
-.tm-text-primary { color: #d13030; }
+.tm-text-primary { color: #f87878; }
 .tm-text-secondary { color: #009999; }
 hr { border-top: 4px solid #CCC; }
 
 .tm-hr-short {
-	border-top: 1px solid #d13030;
+	border-top: 1px solid #f87878;
 	width: 238px;
 	margin-left: auto;
 	margin-right: auto;
@@ -129,7 +129,7 @@ hr { border-top: 4px solid #CCC; }
 .tm-brand-box {
 	width: 240px;
     height: 180px;
-    background: #d13030;
+    background: #f87878;
     color: white;
     display: flex;
     align-items: center;
@@ -150,7 +150,7 @@ hr { border-top: 4px solid #CCC; }
 
 .nav-link {
 	position: relative;
-	color: #d13030;
+	color: #f87878;
 	font-size: 1.4rem;
 	padding-top: 15px;
 	padding-bottom: 15px;
@@ -163,7 +163,7 @@ hr { border-top: 4px solid #CCC; }
 	width: 0;
 	height: 0;
 	border-top: 21px solid transparent;
-	border-left: 20px solid #d13030;
+	border-left: 20px solid #f87878;
 	border-bottom: 21px solid transparent;
 	opacity: 0;
 	transition: all 0.3s ease;
@@ -172,7 +172,7 @@ hr { border-top: 4px solid #CCC; }
 .nav-item:hover .nav-link,
 .nav-link.current {
 	background-color: #F2F2F2;
-	color: #d13030;
+	color: #f87878;
 	padding-left: 30px;
 }
 
@@ -308,7 +308,7 @@ hr { border-top: 4px solid #CCC; }
 
 .tm-gallery-link {
 	padding: 15px;
-	color: #d13030;	
+	color: #f87878;	
 }
 
 .tm-gallery-link.active { color: #666666; }
@@ -336,7 +336,7 @@ hr { border-top: 4px solid #CCC; }
 
 a.tm-paging-link.active,
 a.tm-paging-link:hover {
-    background: #d13030;
+    background: #f87878;
     color: white;
 }
 
@@ -449,7 +449,7 @@ figure.effect-honey figcaption::before {
 	left: 0;
 	width: 100%;
 	height: 10px;
-	background: #d13030;
+	background: #f87878;
 	content: '';
 	-webkit-transform: translate3d(0,10px,0);
 	transform: translate3d(0,10px,0);
@@ -572,7 +572,7 @@ figure.effect-honey:hover ul li a {
 .slick-dots li button:hover:before, 
 .slick-dots li button:focus:before,
 .slick-dots li.slick-active button:before {
-    color: #d13030;
+    color: #f87878;
 }
 
 .tm-carousel {
