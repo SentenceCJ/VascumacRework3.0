@@ -167,7 +167,34 @@ button {
  ol.gradient-list > li + li {
 	 margin-top: 2rem;
 }
- 
 
+ .navbar-icon.bi-person {
+    display: none !important;
+}
 
+/* Réduction du texte du logo en mobile */
+@media (max-width: 576px) {
+  .navbar-brand span {
+    font-size: medium !important; /* ou 14px */
+  }
+  .navbar-brand img {
+    height: 40px; /* réduit aussi le logo si besoin */
+  }
+}
+
+/* Étend le fond blanc du dropdown sur mobile */
+.navbar .dropdown-menu {
+  min-width: 100% !important;  /* prend toute la largeur du menu parent */
+  box-sizing: border-box;
+  padding: 0.5rem 1rem;        /* espace autour des textes */
+  border-radius: 8px;          /* optionnel : coins arrondis */
+  
+}
+
+/* Ajuste les liens à l'intérieur pour ne pas couper le texte */
+.navbar .dropdown-menu .dropdown-item {
+  white-space: normal !important;  /* autorise le retour à la ligne */
+  padding: 10px 15px;
+  font-size: 14px;                 /* un peu plus petit pour les écrits longs */
+}
 
