@@ -198,3 +198,93 @@ button {
   font-size: 14px;                 /* un peu plus petit pour les écrits longs */
 }
 
+/* Liste pédagogique (carte gauche) */
+.list-checked{list-style:none;padding-left:0;margin-bottom:0}
+.list-checked li{position:relative;padding-left:28px;margin:10px 0}
+.list-checked li::before{
+  content:"";position:absolute;left:0;top:8px;width:18px;height:18px;border-radius:50%;
+  background:#5b308b1a;border:2px solid #5b308b
+}
+
+/* Carte droite : titres + rangs */
+.palmares-heading{font-size:28px;font-weight:800}
+.palmares-item{margin-bottom:22px}
+.palmares-title{
+  font-size:22px;font-weight:800;color:#fff;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px
+}
+.palmares-rank{
+  font-size:20px;font-weight:700;color:#fff;margin:4px 0
+}
+.palmares-rank i{margin-right:8px;color:rgb(253, 253, 253);font-size:22px}
+
+/* Responsive : affinage des tailles */
+@media (max-width: 992px){
+  .palmares-heading{font-size:26px}
+  .palmares-title{font-size:20px}
+  .palmares-rank{font-size:19px}
+}
+@media (max-width: 576px){
+  .palmares-heading{font-size:22px}
+  .palmares-title{font-size:18px}
+  .palmares-rank{font-size:17px}
+  .list-checked li{margin:8px 0}
+}
+
+/* --- NAV: empêche le retour à la ligne et force l'alignement --- */
+.navbar .container{
+  display:flex;               /* aligne sur une ligne */
+  align-items:center;
+  flex-wrap:nowrap;           /* pas de wrap */
+}
+
+/* La marque occupe l'espace restant, sans couper le burger */
+.navbar-brand{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex:1 1 auto;              /* grandit/rétrécit */
+  min-width:0;                /* permet l'ellipsage */
+  white-space:nowrap;         /* pas de retour à la ligne */
+}
+
+/* Texte de la marque : ellipses si trop long plutôt que retour à la ligne */
+.navbar-brand span{
+  display:inline-block;
+  overflow:hidden;
+  text-overflow:ellipsis;     /* ajoute … si nécessaire */
+}
+
+/* Le burger garde sa taille et se colle à droite */
+.navbar-toggler{
+  flex:0 0 auto;
+  margin-left:8px;
+}
+
+/* Allège la hauteur de la barre (évite l'empilement sur petits écrans) */
+.navbar{
+  padding-top:.5rem;
+  padding-bottom:.5rem;
+}
+
+/* --- Ajustements responsive pour iPhone 12 et plus petits --- */
+@media (max-width: 420px){
+  .navbar-brand img{ height:38px; }      /* logo un poil plus petit */
+  .navbar-brand span{ font-size: 0.95rem !important; }
+}
+
+@media (max-width: 390px){               /* iPhone 12 */
+  .navbar-brand span{ font-size: 0.92rem !important; }
+}
+
+@media (max-width: 360px){               /* très petits écrans */
+  .navbar-brand span{ font-size: 0.88rem !important; }
+}
+
+/* Supprime le triangle décoratif sur les petits écrans */
+@media (max-width: 576px){
+  .custom-block-overlay .section-overlay,
+  .custom-block::after,
+  .custom-block-overlay::after{
+    display: none !important;
+  }
+}
