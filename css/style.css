@@ -255,13 +255,13 @@ ol.gradient-list>li+li{ margin-top:2rem; }
 /* =========================
    Triangle décoratif : masqué uniquement sur la page Contact
    ========================= */
-@media (max-width:576px){
+/* @media (max-width:576px){
   .page-contact .custom-block-overlay .section-overlay,
   .page-contact .custom-block::after,
   .page-contact .custom-block-overlay::after{
     display:none !important;
   }
-}
+} */
 
 /* =========================
    Palmarès : mode mobile robuste (<= 400px)
@@ -354,3 +354,160 @@ ol.gradient-list>li+li{ margin-top:2rem; }
   .palmares-item{    margin-bottom: 14px !important; }
 }
 
+/* carte */
+
+/* --- CARTES GOOGLE MAPS : 100% fluides --- */
+/* Fonctionne avec tes iframes existantes (même si width/height sont dans le HTML) */
+.tab-content iframe[src*="google.com/maps"],
+.custom-block iframe[src*="google.com/maps"]{
+  width: 100% !important;
+  max-width: 100%;
+  display: block;
+  border: 0;
+  height: auto !important;        /* priorité par rapport aux attributs HTML */
+}
+
+/* On impose un ratio propre quand le navigateur le supporte */
+@supports (aspect-ratio: 1) {
+  .tab-content iframe[src*="google.com/maps"],
+  .custom-block iframe[src*="google.com/maps"]{
+    aspect-ratio: 4 / 3;          /* 4:3 = lisible en mobile */
+    height: auto !important;
+  }
+}
+
+/* --- BLOCS BLEUS (texte) : pas de superposition ni de rognage en mobile --- */
+@media (max-width: 576px){
+  /* Le conteneur peut grandir librement */
+  .tab-content .custom-block.custom-block-overlay{
+    overflow: visible;
+    border-radius: 18px;
+  }
+
+  /* On retire le voile décoratif qui recouvrait le texte en mobile */
+  .tab-content .custom-block.custom-block-overlay .section-overlay{
+    display: none;
+  }
+
+  /* Le texte passe en bloc normal sous la carte, avec un fond dégradé lisible */
+  .tab-content .custom-block.custom-block-overlay .custom-block-overlay-text{
+    position: static;            /* plus de position absolue */
+    inset: auto;
+    transform: none;
+    padding: 16px 14px 18px;
+    margin-top: 12px;            /* petit espace sous la carte */
+    border-radius: 14px;
+    background: linear-gradient(180deg,#86d1cb 0%, #1f5f81 100%);
+    color: #fff;
+    overflow: visible;           /* aucun texte rogné */
+  }
+
+  /* Si une image existe au-dessus, on la contraint proprement */
+  .tab-content .custom-block.custom-block-overlay .custom-block-image{
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: cover;
+    border-radius: 14px;
+  }
+}
+
+/* Un peu d'air entre les cartes sur téléphone */
+@media (max-width: 576px){
+  .tab-content .custom-block{ margin-bottom: 16px; }
+}
+
+
+/* button toggle fixing */
+
+/* Bouton burger : rond blanc contenant l'icône */
+.navbar-toggler{
+  background:#fff !important;
+  border:none !important;
+  border-radius:50%;
+  width:40px;
+  height:40px;
+  padding:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Supprime le style Bootstrap par défaut */
+.navbar-toggler-icon{
+  background-image:none !important;
+  background-color:transparent !important;
+  width:24px;
+  height:24px;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:100% 100%;
+}
+
+/* État FERMÉ (classe .collapsed présente) → 3 traits noirs */
+.navbar-toggler.collapsed .navbar-toggler-icon{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='black' stroke-linecap='round' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+
+/* État OUVERT (classe .collapsed retirée) → croix noire */
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='black' stroke-linecap='round' stroke-width='3' d='M6 6L24 24M24 6L6 24'/%3E%3C/svg%3E") !important;
+}
+
+/* Neutralise d'anciens styles (::before/::after) */
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after{
+  content:none !important;
+}
+
+
+/* Quand le menu est ouvert, afficher le texte de la marque en entier */
+.navbar-collapse.show ~ .navbar-brand span,
+.navbar-collapse.collapsing ~ .navbar-brand span,
+.navbar .navbar-brand span{
+  white-space: normal !important;   /* autorise le retour à la ligne */
+  overflow: visible !important;     /* pas de rognage */
+  text-overflow: unset !important;  /* supprime les "..." */
+}
+
+
+/* Palmarès : mode extensible pour tablettes et petits laptops */
+@media (max-width: 992px){
+  .palmares-card{
+    background: linear-gradient(180deg,#86d1cb 0%, #1f5f81 100%) !important;
+    border-radius: 18px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+  /* On retire image + overlay décoratif pour éviter la superposition */
+  .palmares-card .custom-block-image{ display: none !important; }
+  .palmares-card .section-overlay{ display: none !important; }
+
+  /* Le texte redevient un bloc normal qui peut s'étendre */
+  .palmares-card .custom-block-overlay-text{
+    position: static !important;
+    inset: auto !important;
+    transform: none !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 18px 16px 20px !important;
+    width: 100% !important;
+    text-align: center !important;
+    color: #fff !important;
+  }
+
+  /* Conteneurs flex : aucune hauteur forcée */
+  .palmares-card .d-flex,
+  .palmares-card .flex-column{
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  /* Typo/espaces un peu plus compacts pour ces largeurs */
+  .palmares-heading{ font-size: clamp(20px, 2.6vw, 26px) !important; }
+  .palmares-title{   font-size: clamp(16px, 2.1vw, 20px) !important; margin-bottom: 8px !important; }
+  .palmares-rank{    font-size: clamp(15px, 1.9vw, 19px) !important; margin: 5px 0 !important; }
+  .palmares-item{    margin-bottom: 16px !important; }
+}
