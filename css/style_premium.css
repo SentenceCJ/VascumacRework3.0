@@ -1,0 +1,1420 @@
+/* =========================
+   Boutons (style perso)
+   ========================= */
+button{
+  padding:15px 25px;
+  border:0;
+  border-radius:15px;
+  color:#212121;
+  z-index:1;
+  background:#e8e8e8;
+  position:relative;
+  font-weight:1000;
+  font-size:17px;
+  -webkit-box-shadow:4px 8px 19px -3px rgba(0,0,0,0.27);
+  box-shadow:4px 8px 19px -3px rgba(0,0,0,0.27);
+  transition:all 250ms;
+  overflow:hidden;
+}
+button::before{
+  content:"";
+  position:absolute;
+  top:0;left:0;
+  height:100%;width:0;
+  border-radius:15px;
+  background:#212121;
+  z-index:-1;
+  -webkit-box-shadow:4px 8px 19px -3px rgba(0,0,0,0.27);
+  box-shadow:4px 8px 19px -3px rgba(0,0,0,0.27);
+  transition:all 250ms;
+}
+button:hover{ color:#e8e8e8; }
+button:hover::before{ width:100%; }
+
+/* Responsive sizing des boutons */
+@media (max-width:768px){
+  button{ font-size:15px; padding:12px 20px; }
+}
+@media (max-width:480px){
+  button{ font-size:13px; padding:10px 15px; }
+}
+
+/* =========================
+   Accordéon
+   ========================= */
+.accordion-button{
+  border-radius:15px !important;
+  transition:all .3s ease;
+}
+.accordion-button:not(.collapsed){
+  border-radius:15px !important;
+}
+
+/* =========================
+   Ligne séparatrice perso
+   ========================= */
+.responsive-line{
+  width:80%;
+  height:2px;
+  background:#000;
+  margin:10px auto;
+  opacity:.2;
+}
+
+/* =========================
+   Fonts (utilisées par la liste gradient)
+   ========================= */
+@import url(https://fonts.googleapis.com/css?family=Montserrat:900|Raleway:400,400i,700,700i);
+
+/* =========================
+   Liste ordonnée “gradient”
+   ========================= */
+*,*:before,*:after{ box-sizing:border-box; }
+
+ol.gradient-list{
+  counter-reset:gradient-counter;
+  list-style:none;
+  margin:1.75rem 0;
+  padding-left:1rem;
+}
+ol.gradient-list>li{
+  background:#fff;
+  border-radius:0 .5rem .5rem .5rem;
+  counter-increment:gradient-counter;
+  margin-top:1rem;
+  min-height:3rem;
+  padding:1rem 1rem 1rem 3rem;
+  position:relative;
+  box-shadow:0.25rem 0.25rem .6rem rgba(0,0,0,.05), 0 .5rem 1.125rem rgba(75,0,0,.05);
+}
+ol.gradient-list>li::before,
+ol.gradient-list>li::after{
+  background:linear-gradient(135deg,#83e4e2 0%,#a2ed56 100%);
+  border-radius:1rem 1rem 0 1rem;
+  content:'';
+  height:3rem; width:3rem;
+  left:-1rem; top:-1rem;
+  position:absolute; overflow:hidden;
+}
+ol.gradient-list>li::before{
+  display:flex; align-items:flex-end; justify-content:flex-end;
+  content:counter(gradient-counter);
+  color:#1d1f20;
+  font:900 1.5em/1 'Montserrat';
+  padding:.125em .25em;
+  z-index:1;
+}
+
+/* Couleur identique pour les 10 premiers (gris doux) */
+ol.gradient-list>li:nth-child(10n+1):before,
+ol.gradient-list>li:nth-child(10n+2):before,
+ol.gradient-list>li:nth-child(10n+3):before,
+ol.gradient-list>li:nth-child(10n+4):before,
+ol.gradient-list>li:nth-child(10n+5):before,
+ol.gradient-list>li:nth-child(10n+6):before,
+ol.gradient-list>li:nth-child(10n+7):before,
+ol.gradient-list>li:nth-child(10n+8):before,
+ol.gradient-list>li:nth-child(10n+9):before,
+ol.gradient-list>li:nth-child(10n+10):before{
+  background:linear-gradient(135deg,rgba(179,188,197,1) 0%,rgba(179,188,197,1) 100%);
+}
+ol.gradient-list>li+li{ margin-top:2rem; }
+
+/* =========================
+   Navbar / Header
+   ========================= */
+
+/* Cache l’icône “personne” mobile */
+.navbar-icon.bi-person{ display:none !important; }
+
+/* Empêche le retour à la ligne, burger aligné à droite */
+.navbar .container{
+  display:flex;
+  align-items:center;
+  flex-wrap:nowrap;
+}
+.navbar-brand{
+  display:flex; align-items:center; gap:8px;
+  flex:1 1 auto; min-width:0; white-space:nowrap;
+}
+.navbar-brand span{
+  display:inline-block;
+  overflow:hidden; text-overflow:ellipsis;
+}
+.navbar-toggler{
+  flex:0 0 auto;
+  margin-left:8px;
+}
+.navbar{ padding-top:.5rem; padding-bottom:.5rem; }
+
+/* Réduction du logo/texte sur petits écrans */
+@media (max-width:576px){
+  .navbar-brand span{ font-size:medium !important; }
+  .navbar-brand img{ height:40px; }
+}
+@media (max-width:420px){
+  .navbar-brand img{ height:38px; }
+  .navbar-brand span{ font-size:.95rem !important; }
+}
+@media (max-width:390px){ /* iPhone 12 */
+  .navbar-brand span{ font-size:.92rem !important; }
+}
+@media (max-width:360px){
+  .navbar-brand span{ font-size:.88rem !important; }
+}
+
+/* Bouton burger/close (rond blanc, icône noire) */
+.navbar-toggler{
+  background:#fff !important;
+  border:none !important;
+  border-radius:50%;
+  padding:8px;
+}
+.navbar-toggler-icon{
+  background-image:none !important;
+  position:relative;
+  width:24px; height:2px;
+  background:#000;
+  display:block; transition:all .3s ease-in-out;
+}
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after{
+  content:""; position:absolute; left:0;
+  width:24px; height:2px; background:#000;
+  transition:all .3s ease-in-out;
+}
+.navbar-toggler-icon::before{ top:-8px; }
+.navbar-toggler-icon::after{  top: 8px; }
+
+/* État ouvert -> croix noire */
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon{
+  background-color:transparent;
+}
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::before{
+  transform:rotate(45deg); top:0;
+}
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::after{
+  transform:rotate(-45deg); top:0;
+}
+
+/* =========================
+   Dropdown mobile élargi
+   ========================= */
+.navbar .dropdown-menu{
+  min-width:100% !important;
+  box-sizing:border-box;
+  padding:.5rem 1rem;
+  border-radius:8px;
+}
+.navbar .dropdown-menu .dropdown-item{
+  white-space:normal !important;
+  padding:10px 15px;
+  font-size:14px;
+}
+
+/* =========================
+   Carte Explications (gauche)
+   ========================= */
+.list-checked{ list-style:none; padding-left:0; margin-bottom:0; }
+.list-checked li{
+  position:relative; padding-left:28px; margin:10px 0;
+}
+.list-checked li::before{
+  content:""; position:absolute; left:0; top:8px;
+  width:18px; height:18px; border-radius:50%;
+  background:#5b308b1a; border:2px solid #5b308b;
+}
+
+/* =========================
+   Carte Palmarès (droite)
+   ========================= */
+.palmares-heading{ font-size:28px; font-weight:800; }
+.palmares-item{ margin-bottom:22px; }
+.palmares-title{
+  font-size:22px; font-weight:800; color:#fff;
+  margin-bottom:8px; text-transform:uppercase; letter-spacing:.5px;
+}
+.palmares-rank{
+  font-size:20px; font-weight:700; color:#fff; margin:4px 0;
+}
+.palmares-rank i{ margin-right:8px; color:#fff; font-size:22px; }
+
+/* Ajustements généraux */
+@media (max-width:992px){
+  .palmares-heading{ font-size:26px; }
+  .palmares-title{  font-size:20px; }
+  .palmares-rank{   font-size:19px; }
+}
+@media (max-width:576px){
+  .palmares-heading{ font-size:22px; }
+  .palmares-title{  font-size:18px; }
+  .palmares-rank{   font-size:17px; }
+  .list-checked li{ margin:8px 0; }
+}
+
+/* =========================
+   Triangle décoratif : masqué uniquement sur la page Contact
+   ========================= */
+/* @media (max-width:576px){
+  .page-contact .custom-block-overlay .section-overlay,
+  .page-contact .custom-block::after,
+  .page-contact .custom-block-overlay::after{
+    display:none !important;
+  }
+} */
+
+/* =========================
+   Palmarès : mode mobile robuste (<= 400px)
+   ========================= */
+@media (max-width:400px){
+
+  /* 1) Carte overlay -> carte classique extensible */
+  .palmares-card{
+    background:linear-gradient(180deg,#86d1cb 0%,#1f5f81 100%) !important;
+    border-radius:18px !important;
+    height:auto !important;
+    min-height:0 !important;
+    overflow:visible !important;
+  }
+
+  /* 2) Retirer image & overlay pour éviter les superpositions */
+  .palmares-card .custom-block-image,
+  .palmares-card .section-overlay{
+    display:none !important;
+  }
+
+  /* 3) Zone de texte dans le flux normal */
+  .palmares-card .custom-block-overlay-text{
+    position:static !important;
+    inset:auto !important;
+    transform:none !important;
+    height:auto !important;
+    max-height:none !important;
+    overflow:visible !important;
+    padding:16px 14px 18px !important;
+    width:100% !important;
+    text-align:center !important;
+    color:#fff !important;
+  }
+
+  /* 4) Conteneurs flex : pas de hauteur forcée */
+  .palmares-card .d-flex,
+  .palmares-card .flex-column{
+    height:auto !important; min-height:0 !important;
+  }
+
+  /* 5) Typo + espaces compacts */
+  .palmares-heading{ font-size:clamp(18px,6vw,24px) !important; }
+  .palmares-title{   font-size:clamp(14px,4.8vw,18px) !important; margin-bottom:6px !important; }
+  .palmares-rank{    font-size:clamp(13px,4.5vw,17px) !important; margin:4px 0 !important; }
+  .palmares-rank i{  font-size:18px !important; margin-right:6px !important; }
+  .palmares-item{    margin-bottom:14px !important; }
+}
+
+/* PALMARÈS : safe sur tous les mobiles (<= 576px) */
+@media (max-width: 576px){
+  /* Carte extensible, sans rognage */
+  .palmares-card{
+    background: linear-gradient(180deg,#86d1cb 0%, #1f5f81 100%) !important;
+    border-radius: 18px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+  /* Pas d'image/overlay en mobile pour éviter les superpositions */
+  .palmares-card .custom-block-image{ display: none !important; }
+  .palmares-card .section-overlay{ display: none !important; }
+
+  /* Le texte redevient un bloc normal */
+  .palmares-card .custom-block-overlay-text{
+    position: static !important;
+    inset: auto !important;
+    transform: none !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 16px 14px 18px !important;
+    width: 100% !important;
+    text-align: center !important;
+    color: #fff !important;
+  }
+
+  /* Conteneurs flex : aucune hauteur imposée */
+  .palmares-card .d-flex,
+  .palmares-card .flex-column{
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  /* Typo + espacements compacts */
+  .palmares-heading{ font-size: clamp(18px, 5.6vw, 24px) !important; }
+  .palmares-title{   font-size: clamp(14px, 4.6vw, 18px) !important; margin-bottom: 6px !important; }
+  .palmares-rank{    font-size: clamp(13px, 4.3vw, 17px) !important; margin: 4px 0 !important; }
+  .palmares-rank i{  font-size: 18px !important; margin-right: 6px !important; }
+  .palmares-item{    margin-bottom: 14px !important; }
+}
+
+/* carte */
+
+/* --- CARTES GOOGLE MAPS : 100% fluides --- */
+/* Fonctionne avec tes iframes existantes (même si width/height sont dans le HTML) */
+.tab-content iframe[src*="google.com/maps"],
+.custom-block iframe[src*="google.com/maps"]{
+  width: 100% !important;
+  max-width: 100%;
+  display: block;
+  border: 0;
+  height: auto !important;        /* priorité par rapport aux attributs HTML */
+}
+
+/* On impose un ratio propre quand le navigateur le supporte */
+@supports (aspect-ratio: 1) {
+  .tab-content iframe[src*="google.com/maps"],
+  .custom-block iframe[src*="google.com/maps"]{
+    aspect-ratio: 4 / 3;          /* 4:3 = lisible en mobile */
+    height: auto !important;
+  }
+}
+
+/* --- BLOCS BLEUS (texte) : pas de superposition ni de rognage en mobile --- */
+@media (max-width: 576px){
+  /* Le conteneur peut grandir librement */
+  .tab-content .custom-block.custom-block-overlay{
+    overflow: visible;
+    border-radius: 18px;
+  }
+
+  /* On retire le voile décoratif qui recouvrait le texte en mobile */
+  .tab-content .custom-block.custom-block-overlay .section-overlay{
+    display: none;
+  }
+
+  /* Le texte passe en bloc normal sous la carte, avec un fond dégradé lisible */
+  .tab-content .custom-block.custom-block-overlay .custom-block-overlay-text{
+    position: static;            /* plus de position absolue */
+    inset: auto;
+    transform: none;
+    padding: 16px 14px 18px;
+    margin-top: 12px;            /* petit espace sous la carte */
+    border-radius: 14px;
+    background: linear-gradient(180deg,#86d1cb 0%, #1f5f81 100%);
+    color: #fff;
+    overflow: visible;           /* aucun texte rogné */
+  }
+
+  /* Si une image existe au-dessus, on la contraint proprement */
+  .tab-content .custom-block.custom-block-overlay .custom-block-image{
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: cover;
+    border-radius: 14px;
+  }
+}
+
+/* Un peu d'air entre les cartes sur téléphone */
+@media (max-width: 576px){
+  .tab-content .custom-block{ margin-bottom: 16px; }
+}
+
+
+/* button toggle fixing */
+
+/* Bouton burger : rond blanc contenant l'icône */
+.navbar-toggler{
+  background:#fff !important;
+  border:none !important;
+  border-radius:50%;
+  width:40px;
+  height:40px;
+  padding:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Supprime le style Bootstrap par défaut */
+.navbar-toggler-icon{
+  background-image:none !important;
+  background-color:transparent !important;
+  width:24px;
+  height:24px;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:100% 100%;
+}
+
+/* État FERMÉ (classe .collapsed présente) → 3 traits noirs */
+.navbar-toggler.collapsed .navbar-toggler-icon{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='black' stroke-linecap='round' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+
+/* État OUVERT (classe .collapsed retirée) → croix noire */
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='black' stroke-linecap='round' stroke-width='3' d='M6 6L24 24M24 6L6 24'/%3E%3C/svg%3E") !important;
+}
+
+/* Neutralise d'anciens styles (::before/::after) */
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after{
+  content:none !important;
+}
+
+
+/* Quand le menu est ouvert, afficher le texte de la marque en entier */
+.navbar-collapse.show ~ .navbar-brand span,
+.navbar-collapse.collapsing ~ .navbar-brand span,
+.navbar .navbar-brand span{
+  white-space: normal !important;   /* autorise le retour à la ligne */
+  overflow: visible !important;     /* pas de rognage */
+  text-overflow: unset !important;  /* supprime les "..." */
+}
+
+
+/* Palmarès : mode extensible pour tablettes et petits laptops */
+@media (max-width: 992px){
+  .palmares-card{
+    background: linear-gradient(180deg,#86d1cb 0%, #1f5f81 100%) !important;
+    border-radius: 18px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+  /* On retire image + overlay décoratif pour éviter la superposition */
+  .palmares-card .custom-block-image{ display: none !important; }
+  .palmares-card .section-overlay{ display: none !important; }
+
+  /* Le texte redevient un bloc normal qui peut s'étendre */
+  .palmares-card .custom-block-overlay-text{
+    position: static !important;
+    inset: auto !important;
+    transform: none !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 18px 16px 20px !important;
+    width: 100% !important;
+    text-align: center !important;
+    color: #fff !important;
+  }
+
+  /* Conteneurs flex : aucune hauteur forcée */
+  .palmares-card .d-flex,
+  .palmares-card .flex-column{
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  /* Typo/espaces un peu plus compacts pour ces largeurs */
+  .palmares-heading{ font-size: clamp(20px, 2.6vw, 26px) !important; }
+  .palmares-title{   font-size: clamp(16px, 2.1vw, 20px) !important; margin-bottom: 8px !important; }
+  .palmares-rank{    font-size: clamp(15px, 1.9vw, 19px) !important; margin: 5px 0 !important; }
+  .palmares-item{    margin-bottom: 16px !important; }
+}
+
+/* =========================================================
+   HOME PREMIUM SECTIONS - LCV
+   Sections index : chirurgiens, domaines, cliniques
+   ========================================================= */
+.lcv-home-section {
+  padding: 96px 20px;
+  background:
+    radial-gradient(circle at top left, rgba(128, 208, 199, 0.16), transparent 34%),
+    linear-gradient(180deg, #ffffff 0%, #eef6fb 100%);
+  font-family: "Open Sans", sans-serif;
+  color: #102f3f;
+  overflow: hidden;
+}
+
+.lcv-home-domains {
+  background:
+    radial-gradient(circle at top right, rgba(128, 208, 199, 0.18), transparent 34%),
+    linear-gradient(180deg, #eef6fb 0%, #ffffff 100%);
+}
+
+.lcv-home-clinics {
+  background:
+    radial-gradient(circle at top left, rgba(47, 131, 163, 0.1), transparent 34%),
+    linear-gradient(180deg, #ffffff 0%, #eef6fb 100%);
+}
+
+.lcv-home-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.lcv-home-header {
+  max-width: 780px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+
+.lcv-home-kicker {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: #2f83a3;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.lcv-home-header h2 {
+  margin: 0 0 18px;
+  color: #102f3f;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(2.1rem, 4vw, 3.35rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+}
+
+.lcv-home-header p {
+  margin: 0 auto;
+  max-width: 690px;
+  color: #647985;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.lcv-home-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 20px;
+  border-radius: 14px;
+  background: #2f83a3;
+  color: #fff !important;
+  text-decoration: none !important;
+  font-weight: 800;
+  font-size: 0.92rem;
+  box-shadow: 0 12px 25px rgba(47, 131, 163, 0.18);
+  transition: 0.3s ease;
+}
+
+.lcv-home-btn:hover {
+  background: #256c86;
+  color: #fff !important;
+  transform: translateY(-2px);
+}
+
+/* Chirurgiens */
+.lcv-home-surgeons-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.lcv-home-surgeon-card {
+  overflow: hidden;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(65, 142, 170, 0.14);
+  box-shadow: 0 25px 60px rgba(17, 58, 80, 0.1);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.lcv-home-surgeon-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 35px 80px rgba(17, 58, 80, 0.16);
+}
+
+.lcv-home-surgeon-image {
+  position: relative;
+  height: 330px;
+  margin: 18px 18px 0;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #dfeff6;
+}
+
+.lcv-home-surgeon-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.lcv-home-surgeon-card:hover .lcv-home-surgeon-image img {
+  transform: scale(1.04);
+}
+
+.lcv-home-badge {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  z-index: 2;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  color: #2f83a3;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.lcv-home-clinic-image .lcv-home-badge {
+  top: 18px;
+  bottom: auto;
+}
+
+.lcv-home-surgeon-content,
+.lcv-home-clinic-content {
+  padding: 26px 28px 30px;
+}
+
+.lcv-home-surgeon-title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.lcv-home-surgeon-title h3,
+.lcv-home-clinic-content h3 {
+  margin: 0;
+  color: #103244;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.22rem;
+  line-height: 1.25;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.lcv-home-surgeon-content p {
+  margin: 0 0 20px;
+  color: #647985;
+  font-size: 0.98rem;
+}
+
+.lcv-home-icon-link {
+  width: 38px;
+  height: 38px;
+  border-radius: 13px;
+  background: #eef6fb;
+  color: #2f83a3 !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none !important;
+  font-weight: 800;
+  flex-shrink: 0;
+  transition: 0.3s ease;
+}
+
+.lcv-home-icon-link:hover {
+  background: #2f83a3;
+  color: #fff !important;
+  transform: translateY(-2px);
+}
+
+.lcv-home-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.lcv-home-pills span {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #f7fbfd;
+  border: 1px solid rgba(47, 131, 163, 0.12);
+  color: #2f83a3;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+/* Domaines */
+.lcv-home-domains-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.lcv-home-domains-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lcv-home-domains-visual::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  max-width: 100%;
+  border-radius: 50%;
+  background: rgba(47, 131, 163, 0.08);
+  filter: blur(2px);
+}
+
+.lcv-home-domains-card {
+  position: relative;
+  width: min(390px, 100%);
+  aspect-ratio: 1;
+  border-radius: 42px;
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(47, 131, 163, 0.14);
+  box-shadow: 0 30px 80px rgba(17, 58, 80, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+}
+
+.lcv-home-domains-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 34px;
+}
+
+.lcv-home-domains-panel {
+  display: grid;
+  gap: 16px;
+}
+
+.lcv-home-domain-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(65, 142, 170, 0.14);
+  border-radius: 24px;
+  box-shadow: 0 20px 55px rgba(17, 58, 80, 0.08);
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.lcv-home-domain-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 28px 70px rgba(17, 58, 80, 0.12);
+}
+
+.lcv-home-domain-toggle {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 24px 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  color: #103244;
+  font-size: 1.12rem;
+  font-weight: 800;
+  box-shadow: none;
+}
+
+.lcv-home-domain-toggle::before {
+  display: none !important;
+}
+
+.lcv-home-domain-card.active .lcv-home-domain-toggle {
+  background: linear-gradient(135deg, rgba(47, 131, 163, 0.13), rgba(128, 208, 199, 0.12));
+  color: #13547a;
+}
+
+.lcv-home-domain-arrow {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  background: #f2f8fb;
+  color: #2f83a3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+  flex-shrink: 0;
+}
+
+.lcv-home-domain-card.active .lcv-home-domain-arrow {
+  transform: rotate(180deg);
+  background: #ffffff;
+}
+
+.lcv-home-domain-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.lcv-home-domain-card.active .lcv-home-domain-content {
+  max-height: 360px;
+}
+
+.lcv-home-domain-inner {
+  padding: 26px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(16, 47, 63, 0.08);
+}
+
+.lcv-home-domain-inner p {
+  margin: 0 0 22px;
+  color: #647985;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* Cliniques */
+.lcv-home-clinics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.lcv-home-clinic-card {
+  overflow: hidden;
+  min-height: 520px;
+  border-radius: 28px;
+  background: #fff;
+  box-shadow: 0 25px 60px rgba(17, 58, 80, 0.12);
+  border: 1px solid rgba(65, 142, 170, 0.14);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.lcv-home-clinic-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 35px 75px rgba(17, 58, 80, 0.18);
+}
+
+.lcv-home-clinic-image {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  background: #dfeff6;
+}
+
+.lcv-home-clinic-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.lcv-home-clinic-card:hover .lcv-home-clinic-image img {
+  transform: scale(1.06);
+}
+
+.lcv-home-clinic-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(16, 47, 63, 0.04), rgba(16, 47, 63, 0.28));
+  pointer-events: none;
+}
+
+.lcv-home-info-list {
+  display: grid;
+  gap: 14px;
+  margin: 18px 0 26px;
+}
+
+.lcv-home-info-list p {
+  margin: 0;
+  color: #647985;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.lcv-home-info-list strong {
+  color: #103244;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+}
+
+@media (max-width: 1050px) {
+  .lcv-home-surgeons-grid,
+  .lcv-home-clinics-grid {
+    grid-template-columns: 1fr;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .lcv-home-domains-layout {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+
+  .lcv-home-surgeon-image {
+    height: 380px;
+  }
+
+  .lcv-home-clinic-card {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .lcv-home-section {
+    padding: 70px 16px;
+  }
+
+  .lcv-home-header {
+    text-align: left;
+    margin-bottom: 38px;
+  }
+
+  .lcv-home-surgeon-image {
+    height: 300px;
+    margin: 14px 14px 0;
+  }
+
+  .lcv-home-surgeon-content,
+  .lcv-home-clinic-content {
+    padding: 24px;
+  }
+
+  .lcv-home-domains-card {
+    border-radius: 28px;
+  }
+
+  .lcv-home-domain-toggle {
+    padding: 20px;
+    font-size: 1rem;
+  }
+
+  .lcv-home-domain-inner {
+    padding: 22px 20px;
+  }
+
+  .lcv-home-clinic-image {
+    height: 220px;
+  }
+}
+
+
+.lcv-footer {
+  background:
+    radial-gradient(circle at top left, rgba(128, 208, 199, 0.18), transparent 32%),
+    linear-gradient(135deg, #102f3f 0%, #13547a 55%, #2f83a3 100%);
+  color: #ffffff;
+  padding: 70px 20px 26px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.lcv-footer-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1.1fr;
+  gap: 42px;
+}
+
+.lcv-footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+
+.lcv-footer-logo img {
+  height: 54px;
+}
+
+.lcv-footer-logo span {
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+.lcv-footer p {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.lcv-footer h6 {
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.lcv-footer-col,
+.lcv-footer-contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.lcv-footer-col a {
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  transition: 0.25s ease;
+}
+
+.lcv-footer-col a:hover,
+.lcv-footer-bottom a:hover {
+  color: #ffffff;
+  transform: translateX(3px);
+}
+
+.lcv-footer-btn {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 20px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #103244 !important;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.9rem;
+  transition: 0.25s ease;
+}
+
+.lcv-footer-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+}
+
+.lcv-footer-bottom {
+  max-width: 1180px;
+  margin: 50px auto 0;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255,255,255,0.16);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: rgba(255,255,255,0.62);
+  font-size: 0.85rem;
+}
+
+.lcv-footer-bottom a {
+  color: rgba(255,255,255,0.82);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+@media (max-width: 950px) {
+  .lcv-footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .lcv-footer-bottom {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .lcv-footer {
+    padding: 55px 18px 24px;
+  }
+
+  .lcv-footer-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* =========================
+   NAVBAR PREMIUM LCV
+========================= */
+
+.lcv-premium-nav {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1180px, calc(100% - 32px));
+  z-index: 999;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow: 0 18px 55px rgba(16, 47, 63, 0.16);
+  backdrop-filter: blur(18px);
+}
+
+.lcv-premium-nav .container {
+  max-width: 100%;
+  padding: 0;
+}
+
+.lcv-nav-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  text-decoration: none;
+}
+
+.lcv-nav-brand img {
+  height: 44px;
+  width: auto;
+}
+
+.lcv-nav-brand span {
+  color: #102f3f;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.98rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.lcv-nav-links {
+  gap: 4px;
+}
+
+.lcv-premium-nav .nav-link {
+  position: relative;
+  padding: 10px 14px !important;
+  color: #23485a !important;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.lcv-premium-nav .nav-link:hover,
+.lcv-premium-nav .nav-link.active {
+  color: #2f83a3 !important;
+  background: rgba(47, 131, 163, 0.08);
+}
+
+.lcv-nav-cta-wrap {
+  margin-left: 8px;
+}
+
+.lcv-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2f83a3, #13547a);
+  color: #ffffff !important;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.84rem;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 12px 28px rgba(47, 131, 163, 0.28);
+  transition: 0.25s ease;
+  white-space: nowrap;
+}
+
+.lcv-nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(47, 131, 163, 0.35);
+}
+
+.lcv-dropdown {
+  border: 1px solid rgba(47, 131, 163, 0.12);
+  border-radius: 18px;
+  padding: 10px;
+  margin-top: 12px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 20px 55px rgba(17, 58, 80, 0.14);
+  backdrop-filter: blur(14px);
+}
+
+.lcv-dropdown .dropdown-item {
+  border-radius: 12px;
+  padding: 10px 12px;
+  color: #23485a;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.lcv-dropdown .dropdown-item:hover {
+  background: #eef6fb;
+  color: #2f83a3;
+}
+
+/* Burger */
+.lcv-nav-toggler {
+  width: 42px;
+  height: 42px;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 50%;
+  background: #eef6fb !important;
+  box-shadow: none !important;
+}
+
+.lcv-nav-toggler:focus {
+  box-shadow: none !important;
+}
+
+.lcv-nav-toggler .navbar-toggler-icon {
+  background-image: none !important;
+  position: relative;
+  width: 22px;
+  height: 2px;
+  background: #102f3f;
+  display: inline-block;
+}
+
+.lcv-nav-toggler .navbar-toggler-icon::before,
+.lcv-nav-toggler .navbar-toggler-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 2px;
+  background: #102f3f;
+  transition: 0.25s ease;
+}
+
+.lcv-nav-toggler .navbar-toggler-icon::before {
+  top: -7px;
+}
+
+.lcv-nav-toggler .navbar-toggler-icon::after {
+  top: 7px;
+}
+
+.lcv-nav-toggler:not(.collapsed) .navbar-toggler-icon {
+  background: transparent;
+}
+
+.lcv-nav-toggler:not(.collapsed) .navbar-toggler-icon::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.lcv-nav-toggler:not(.collapsed) .navbar-toggler-icon::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* Pour garder la photo/hero visible derrière */
+.hero-section {
+  position: relative;
+  padding-top: 120px;
+}
+
+/* Mobile */
+@media (max-width: 991px) {
+  .lcv-premium-nav {
+    top: 12px;
+    width: calc(100% - 24px);
+    border-radius: 24px;
+    padding: 10px 14px;
+  }
+
+  .lcv-premium-nav .navbar-collapse {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(16, 47, 63, 0.08);
+  }
+
+  .lcv-nav-links {
+    gap: 6px;
+    align-items: stretch !important;
+  }
+
+  .lcv-premium-nav .nav-link {
+    padding: 12px 14px !important;
+    width: 100%;
+  }
+
+  .lcv-nav-cta-wrap {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+
+  .lcv-nav-cta {
+    width: 100%;
+  }
+
+  .lcv-dropdown {
+    box-shadow: none;
+    border-radius: 14px;
+    margin-top: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lcv-nav-brand img {
+    height: 38px;
+  }
+
+  .lcv-nav-brand span {
+    font-size: 0.88rem;
+    white-space: normal;
+    line-height: 1.15;
+  }
+}
+
+ /* BRAND BAR */
+      .brand-bar {
+        width: 100%;
+        overflow: hidden;
+        background: #c7e5ff;
+        padding: 14px 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.06);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      }
+
+      .brand-track {
+        display: flex;
+        gap: 60px;
+        width: max-content;
+        animation: scroll 30s linear infinite;
+      }
+
+      .brand-item {
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: #00042b;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        opacity: 0.7;
+        flex-shrink: 0;
+      }
+
+      /* Séparateur */
+      .brand-item::after {
+        content: "•";
+        margin-left: 60px;
+        opacity: 0.3;
+      }
+
+      /* Mise en avant 2026 */
+      .brand-item:nth-child(-n + 5) {
+        opacity: 1;
+        font-weight: 600;
+        color: #00042b;
+      }
+
+      /* Pause au hover */
+      .brand-bar:hover .brand-track {
+        animation-play-state: paused;
+      }
+
+      /* Animation */
+      @keyframes scroll {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* CONTENU */
+      .content {
+        padding: 80px 20px;
+        text-align: center;
+        font-size: 1.2rem;
+      }

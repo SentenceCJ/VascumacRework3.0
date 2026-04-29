@@ -1,145 +1,725 @@
 <!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <meta name="description" content="Dr Bruno MACHEDA Dr Meryl FAVIER DE LACHOMETTE Dr Jana KONECNA Polyclinique Lyon-Nord Clinique Charcot Clinique Saint-Charles Parcours Patient">
-        <meta name="author" content="">
+    <meta
+      name="description"
+      content="Dr Bruno MACHEDA Dr Meryl FAVIER DE LACHOMETTE Dr Jana KONECNA Polyclinique Lyon-Nord Clinique Charcot Clinique Saint-Charles Parcours Patient"
+    />
+    <meta name="author" content="" />
 
-        <title>Parcours Patient</title>
+    <title>Parcours Patient</title>
 
-        <!-- CSS FILES -->        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
 
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
-                        
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-        <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
 
-        <link href="css/templatemo-topic-listing.css" rel="stylesheet">      
-        <link href="css/style.css" rel="stylesheet">    
-         <!-- <link rel="stylesheet" href="css/templatemo-plot-listing.css"> -->
-      <!--  <link rel="stylesheet" href="css/animated.css"> -->
-        
-<!--<
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="css/bootstrap-icons.css" rel="stylesheet" />
+
+    <link href="css/templatemo-topic-listing.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="css/templatemo-plot-listing.css"> -->
+    <!--  <link rel="stylesheet" href="css/animated.css"> -->
+
+    <!--<
 
 TemplateMo 590 topic listing
 
 https://templatemo.com/tm-590-topic-listing
 
 -->
-    </head>
-    
-    <body id="top">
 
-        <main>
+    <style>
+      /* NAVBAR PREMIUM */
+      .lcv-premium-nav {
+        position: absolute;
+        top: 18px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(1180px, calc(100% - 32px));
+        z-index: 999;
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.82);
+        border: 1px solid rgba(255, 255, 255, 0.72);
+        box-shadow: 0 18px 55px rgba(16, 47, 63, 0.16);
+        backdrop-filter: blur(18px);
+      }
+      .lcv-premium-nav .container {
+        max-width: 100%;
+        padding: 0;
+      }
+      .lcv-nav-brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+      }
+      .lcv-nav-brand img {
+        height: 44px;
+      }
+      .lcv-nav-brand span {
+        color: #102f3f;
+        font-family: Montserrat, sans-serif;
+        font-size: 0.98rem;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+      .lcv-nav-links {
+        gap: 4px;
+      }
+      .lcv-premium-nav .nav-link {
+        padding: 10px 14px !important;
+        color: #23485a !important;
+        font-family: Montserrat, sans-serif;
+        font-size: 0.82rem;
+        font-weight: 700;
+        border-radius: 999px;
+      }
+      .lcv-premium-nav .nav-link:hover,
+      .lcv-premium-nav .nav-link.active {
+        color: #2f83a3 !important;
+        background: rgba(47, 131, 163, 0.08);
+      }
+      .lcv-nav-cta-wrap {
+        margin-left: 8px;
+      }
+      .lcv-nav-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 18px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #2f83a3, #13547a);
+        color: #fff !important;
+        font-family: Montserrat, sans-serif;
+        font-size: 0.84rem;
+        font-weight: 800;
+        text-decoration: none;
+        box-shadow: 0 12px 28px rgba(47, 131, 163, 0.28);
+        white-space: nowrap;
+      }
+      .lcv-dropdown {
+        border: 1px solid rgba(47, 131, 163, 0.12);
+        border-radius: 18px;
+        padding: 10px;
+        margin-top: 12px;
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: 0 20px 55px rgba(17, 58, 80, 0.14);
+        backdrop-filter: blur(14px);
+      }
+      .lcv-dropdown .dropdown-item {
+        border-radius: 12px;
+        padding: 10px 12px;
+        color: #23485a;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+      .lcv-dropdown .dropdown-item:hover {
+        background: #eef6fb;
+        color: #2f83a3;
+      }
+      .lcv-nav-toggler {
+        width: 42px;
+        height: 42px;
+        padding: 0 !important;
+        border: 0 !important;
+        border-radius: 50%;
+        background: #eef6fb !important;
+        box-shadow: none !important;
+      }
+      .hero-section {
+        position: relative;
+        padding-top: 120px;
+      }
 
-          <nav class="navbar navbar-expand-lg">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <!-- Remplacement de l'icône par une image -->
-                    <img src="images/detoure2.png" alt="Logo" style="height: 50px;">
-                    <span style="font-size:large;">Lyon Chirurgie Vasculaire</span>
-                </a>
-        
-                <div class="d-lg-none ms-auto me-4">
-                    <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
-                </div>
-        
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-        
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-lg-5 me-lg-auto">
-                        <li class="nav-item">
-                            <a class="nav-link " style="color: white;" href="index.html">Accueil</a>
-                        </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link " href="equipe.html">Equipe</a>
-                        </li> -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pathologies</a>
-                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
-                                <li><a class="dropdown-item" href="Chirurgiearterielle.html">Chirurgie artérielle</a></li>
-                                <li><a class="dropdown-item" href="chirurgieveineuse.html">Chirurgie veineuse</a></li>
-                                <li><a class="dropdown-item" href="ChirurgieDialise.html">Chirurgies des abords d’hémodialyse</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="parcourspatient.html">Parcours Patient</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="actualite.html">Actualités</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="contact.html">Contact</a>
-                        </li>
-                    
-                    <div class="d-none d-lg-block ">
-                        <a class="btn" href="contact.html" style="margin-top: 10px; justify-content: center; width: 100%; background-color: whitesmoke; box-shadow: none; font-size: large;" >Prendre Rendez-vous</a>
-                    </div>
-                    </ul>
-                </div>
+      /* PAGE PARCOURS PREMIUM */
+      .lcv-patient-page {
+        font-family: "Open Sans", sans-serif;
+      }
+      .lcv-patient-container {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+      .lcv-patient-intro {
+        padding: 100px 0;
+        background:
+          radial-gradient(
+            circle at 8% 8%,
+            rgba(128, 208, 199, 0.16),
+            transparent 34%
+          ),
+          linear-gradient(180deg, #fff 0%, #eef6fb 100%);
+      }
+      .lcv-patient-header {
+        max-width: 820px;
+        margin: 0 auto 54px;
+        text-align: center;
+      }
+      .lcv-patient-kicker {
+        display: inline-block;
+        margin-bottom: 14px;
+        color: #2f83a3;
+        font-family: Montserrat, sans-serif;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+      .lcv-patient-header h2 {
+        margin: 0 0 18px;
+        color: #102f3f;
+        font-family: Montserrat, sans-serif;
+        font-size: clamp(2.2rem, 4vw, 3.4rem);
+        font-weight: 800;
+        letter-spacing: -0.04em;
+      }
+      .lcv-patient-header p {
+        max-width: 720px;
+        margin: 0 auto;
+        color: #647985;
+        font-size: 1.05rem;
+        line-height: 1.75;
+      }
+      .lcv-intro-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 34px;
+        align-items: stretch;
+      }
+      .lcv-intro-card {
+        padding: 42px;
+        border-radius: 34px;
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(65, 142, 170, 0.14);
+        box-shadow: 0 25px 70px rgba(17, 58, 80, 0.1);
+      }
+      .lcv-intro-card h3 {
+        margin: 0 0 18px;
+        color: #103244;
+        font-family: Montserrat, sans-serif;
+        font-weight: 800;
+        font-size: 1.6rem;
+      }
+      .lcv-intro-card p,
+      .lcv-intro-bottom {
+        color: #647985;
+        line-height: 1.75;
+        font-size: 1rem;
+      }
+      .lcv-intro-note {
+        margin-top: 24px;
+        padding: 18px 20px;
+        border-radius: 18px;
+        background: #eef6fb;
+        color: #2f83a3;
+        font-weight: 800;
+      }
+      .lcv-intro-images {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+      .lcv-intro-images img {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+        border-radius: 28px;
+        box-shadow: 0 25px 60px rgba(17, 58, 80, 0.12);
+      }
+      .lcv-intro-bottom {
+        max-width: 880px;
+        margin: 38px auto 0;
+        text-align: center;
+      }
+
+      .lcv-steps-section {
+        padding: 100px 0;
+        background: linear-gradient(180deg, #eef6fb 0%, #fff 100%);
+      }
+      .lcv-steps-list {
+        display: grid;
+        gap: 24px;
+      }
+      .lcv-step-card {
+        display: grid;
+        grid-template-columns: 90px 1fr;
+        gap: 24px;
+        padding: 30px;
+        border-radius: 30px;
+        background: rgba(255, 255, 255, 0.94);
+        border: 1px solid rgba(65, 142, 170, 0.14);
+        box-shadow: 0 22px 60px rgba(17, 58, 80, 0.08);
+      }
+      .lcv-step-number {
+        width: 68px;
+        height: 68px;
+        border-radius: 22px;
+        background: linear-gradient(135deg, #2f83a3, #13547a);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Montserrat, sans-serif;
+        font-weight: 800;
+        font-size: 1.25rem;
+        box-shadow: 0 14px 30px rgba(47, 131, 163, 0.25);
+      }
+      .lcv-step-content h3 {
+        margin: 0 0 14px;
+        color: #103244;
+        font-family: Montserrat, sans-serif;
+        font-weight: 800;
+        font-size: 1.4rem;
+      }
+      .lcv-step-content p {
+        color: #647985;
+        line-height: 1.72;
+        margin-bottom: 16px;
+      }
+      .lcv-step-content a {
+        color: #2f83a3;
+        font-weight: 800;
+        text-decoration: none;
+      }
+      .lcv-step-content ul {
+        margin: 0;
+        padding-left: 20px;
+        color: #647985;
+        line-height: 1.75;
+      }
+      .lcv-step-contact-grid,
+      .lcv-doc-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-top: 20px;
+      }
+      .lcv-step-contact-grid span,
+      .lcv-doc-grid > div {
+        padding: 18px;
+        border-radius: 18px;
+        background: #f7fbfd;
+        border: 1px solid rgba(47, 131, 163, 0.12);
+        color: #647985;
+      }
+      .lcv-step-contact-grid strong {
+        display: block;
+        color: #103244;
+        font-family: Montserrat, sans-serif;
+        margin-bottom: 6px;
+      }
+      .lcv-doc-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .lcv-doc-grid h4 {
+        font-family: Montserrat, sans-serif;
+        color: #103244;
+        font-size: 1rem;
+        font-weight: 800;
+        margin-bottom: 12px;
+      }
+      .lcv-consent-box {
+        margin-top: 20px;
+        padding: 18px 20px;
+        border-radius: 18px;
+        background: linear-gradient(
+          135deg,
+          rgba(47, 131, 163, 0.1),
+          rgba(128, 208, 199, 0.1)
+        );
+        color: #647985;
+        line-height: 1.7;
+        border: 1px solid rgba(47, 131, 163, 0.12);
+      }
+
+      .lcv-urgent-section {
+        padding: 90px 0;
+        background: #fff;
+      }
+      .lcv-urgent-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      .lcv-urgent-card {
+        padding: 30px;
+        border-radius: 28px;
+        background: linear-gradient(180deg, #fff, #f6fbfd);
+        border: 1px solid rgba(65, 142, 170, 0.14);
+        box-shadow: 0 22px 60px rgba(17, 58, 80, 0.08);
+      }
+      .lcv-urgent-card h3 {
+        margin: 0 0 16px;
+        color: #103244;
+        font-family: Montserrat, sans-serif;
+        font-size: 1.25rem;
+        font-weight: 800;
+      }
+      .lcv-urgent-card p {
+        color: #647985;
+        line-height: 1.65;
+        margin-bottom: 18px;
+      }
+      .lcv-urgent-card a {
+        display: inline-flex;
+        padding: 12px 18px;
+        border-radius: 999px;
+        background: #2f83a3;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 800;
+      }
+      .lcv-urgent-note {
+        margin-top: 28px;
+        padding: 24px;
+        border-radius: 24px;
+        background: #eef6fb;
+        text-align: center;
+        color: #647985;
+      }
+      .lcv-urgent-note p {
+        margin: 6px 0;
+        color: #647985;
+      }
+
+      /* FOOTER PREMIUM */
+      .lcv-footer {
+        background:
+          radial-gradient(
+            circle at top left,
+            rgba(128, 208, 199, 0.18),
+            transparent 32%
+          ),
+          linear-gradient(135deg, #102f3f 0%, #13547a 55%, #2f83a3 100%);
+        color: #fff;
+        padding: 70px 20px 26px;
+        font-family: "Open Sans", sans-serif;
+      }
+      .lcv-footer-container {
+        max-width: 1180px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.3fr 1fr 1fr 1.1fr;
+        gap: 42px;
+      }
+      .lcv-footer-logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 20px;
+        text-decoration: none;
+      }
+      .lcv-footer-logo img {
+        height: 54px;
+      }
+      .lcv-footer-logo span {
+        color: #fff;
+        font-family: Montserrat, sans-serif;
+        font-weight: 800;
+        font-size: 1.05rem;
+        line-height: 1.2;
+      }
+      .lcv-footer p {
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin: 0;
+      }
+      .lcv-footer h6 {
+        color: #fff;
+        font-family: Montserrat, sans-serif;
+        font-size: 0.85rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+      }
+      .lcv-footer-col,
+      .lcv-footer-contact {
+        display: flex;
+        flex-direction: column;
+      }
+      .lcv-footer-col a {
+        color: rgba(255, 255, 255, 0.72);
+        text-decoration: none;
+        font-size: 0.95rem;
+        margin-bottom: 12px;
+      }
+      .lcv-footer-col a:hover,
+      .lcv-footer-bottom a:hover {
+        color: #fff;
+      }
+      .lcv-footer-btn {
+        display: inline-flex;
+        width: fit-content;
+        margin-top: 20px;
+        padding: 12px 18px;
+        border-radius: 999px;
+        background: #fff;
+        color: #103244 !important;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 0.9rem;
+      }
+      .lcv-footer-bottom {
+        max-width: 1180px;
+        margin: 50px auto 0;
+        padding-top: 22px;
+        border-top: 1px solid rgba(255, 255, 255, 0.16);
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        color: rgba(255, 255, 255, 0.62);
+        font-size: 0.85rem;
+      }
+      .lcv-footer-bottom a {
+        color: rgba(255, 255, 255, 0.82);
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      @media (max-width: 991px) {
+        .lcv-premium-nav {
+          top: 12px;
+          width: calc(100% - 24px);
+          border-radius: 24px;
+        }
+        .lcv-premium-nav .navbar-collapse {
+          margin-top: 14px;
+          padding-top: 14px;
+          border-top: 1px solid rgba(16, 47, 63, 0.08);
+        }
+        .lcv-nav-links {
+          gap: 6px;
+          align-items: stretch !important;
+        }
+        .lcv-premium-nav .nav-link {
+          padding: 12px 14px !important;
+          width: 100%;
+        }
+        .lcv-nav-cta-wrap {
+          margin-left: 0;
+          margin-top: 8px;
+        }
+        .lcv-nav-cta {
+          width: 100%;
+        }
+        .lcv-intro-grid,
+        .lcv-step-contact-grid,
+        .lcv-urgent-grid,
+        .lcv-footer-container {
+          grid-template-columns: 1fr;
+        }
+        .lcv-step-card {
+          grid-template-columns: 1fr;
+        }
+        .lcv-doc-grid {
+          grid-template-columns: 1fr;
+        }
+        .lcv-footer-bottom {
+          flex-direction: column;
+        }
+      }
+      @media (max-width: 600px) {
+        .lcv-patient-intro,
+        .lcv-steps-section,
+        .lcv-urgent-section {
+          padding: 70px 0;
+        }
+        .lcv-patient-header {
+          text-align: left;
+          margin-bottom: 36px;
+        }
+        .lcv-intro-card,
+        .lcv-step-card {
+          padding: 24px;
+          border-radius: 24px;
+        }
+        .lcv-intro-images img {
+          height: 200px;
+        }
+        .lcv-footer {
+          padding: 55px 18px 24px;
+        }
+      }
+      @media (max-width: 480px) {
+        .lcv-nav-brand img {
+          height: 38px;
+        }
+        .lcv-nav-brand span {
+          font-size: 0.88rem;
+          white-space: normal;
+          line-height: 1.15;
+        }
+      }
+    </style>
+  </head>
+
+  <body id="top">
+    <main>
+      <nav class="lcv-premium-nav navbar navbar-expand-lg">
+        <div class="container">
+          <a class="lcv-nav-brand navbar-brand" href="index.html">
+            <img
+              src="images/detoure2.png"
+              alt="Logo Lyon Chirurgie Vasculaire"
+            />
+            <span>Lyon Chirurgie Vasculaire</span>
+          </a>
+
+          <button
+            class="navbar-toggler lcv-nav-toggler collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul
+              class="navbar-nav lcv-nav-links ms-lg-auto align-items-lg-center"
+            >
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Accueil</a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarLightDropdownMenuLink"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Pathologies</a
+                >
+                <ul
+                  class="dropdown-menu lcv-dropdown"
+                  aria-labelledby="navbarLightDropdownMenuLink"
+                >
+                  <li>
+                    <a class="dropdown-item" href="Chirurgiearterielle.html"
+                      >Chirurgie artérielle</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="chirurgieveineuse.html"
+                      >Chirurgie veineuse</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="ChirurgieDialise.html"
+                      >Chirurgies des abords d’hémodialyse</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link active" href="parcourspatient.html"
+                  >Parcours patient</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="actualite.html">Actualités</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+
+              <li class="nav-item lcv-nav-cta-wrap">
+                <a class="lcv-nav-cta" href="contact.html"
+                  >Prendre rendez-vous</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <section
+        class="hero-section d-flex justify-content-center align-items-center"
+        id="section_1"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-12 mx-auto">
+              <h1 class="text-white text-center">Le Parcours Patient</h1>
             </div>
-        </nav>
-            
+          </div>
+        </div>
+      </section>
 
-            <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
-                <div class="container">
-                    <div class="row">
+      <section class="lcv-patient-page lcv-patient-intro" id="topics-detail">
+        <div class="lcv-patient-container">
+          <div class="lcv-patient-header">
+            <span class="lcv-patient-kicker">Parcours patient</span>
+            <h2>Votre parcours en vue d’une chirurgie vasculaire</h2>
+            <p>
+              Afin de vous accompagner au mieux tout au long de votre prise en
+              charge, nous avons mis en place un parcours patient structuré,
+              clair et sécurisé.
+            </p>
+          </div>
 
-                        <div class="col-lg-8 col-12 mx-auto">
-                            <h1 class="text-white text-center">Le Parcours Patient</h1>
-
-                            
-
-                            
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="topics-detail-section section-padding" id="topics-detail">
-              <div class="container">
-                  <div class="row">
-
-                      <div class="col-lg-8 col-12 m-auto">
-                          <h3 class="mb-4">Votre parcours en tant que patient en vue d'une chirurgie vasculaire</h3>
-
-                          <p>Afin de vous accompagner au mieux tout au long de votre prise en charge, nous avons mis en place un parcours patient structuré, clair et sécurisé. De la première consultation à la sortie d’hospitalisation, chaque étape est pensée pour répondre à vos besoins médicaux et administratifs, en vous offrant un suivi personnalisé et une information transparente.</p>
-
-                          <p>Que ce soit pour une intervention programmée ou en urgence, nos équipes sont à votre écoute pour vous guider, vous informer et vous accompagner à chaque moment clé : prise de rendez-vous, consultation, anesthésie, intervention chirurgicale et hospitalisation.</p>
-
-                          <!-- <blockquote>
-                              Freelancing your skills isn’t going to make you a millionaire overnight.
-                          </blockquote> -->
-
-                          <div class="row my-4">
-                              <div class="col-lg-6 col-md-6 col-12">
-                                  <img src="images/adult-4402808_1280.jpg" class="topics-detail-block-image img-fluid">
-                              </div>
-
-                              <div class="col-lg-6 col-md-6 col-12 mt-4 mt-lg-0 mt-md-0">
-                                  <img src="images/blood-pressure-1584223_1280.jpg" class="topics-detail-block-image img-fluid">
-                              </div>
-                          </div>
-
-                          <p>Retrouvez ci-dessous les étapes essentielles de votre parcours au sein de nos cliniques (Lyon Nord, Charcot ou Saint-Charles), ainsi que les documents nécessaires à chaque rendez-vous. <br>Notre priorité : votre sécurité, votre compréhension et votre sérénité.</p>
-                      </div>
-
-                  </div>
+          <div class="lcv-intro-grid">
+            <article class="lcv-intro-card">
+              <h3>Un accompagnement clair à chaque étape</h3>
+              <p>
+                De la première consultation à la sortie d’hospitalisation,
+                chaque étape est pensée pour répondre à vos besoins médicaux et
+                administratifs, en vous offrant un suivi personnalisé et une
+                information transparente.
+              </p>
+              <p>
+                Que ce soit pour une intervention programmée ou en urgence, nos
+                équipes sont à votre écoute pour vous guider, vous informer et
+                vous accompagner à chaque moment clé : prise de rendez-vous,
+                consultation, anesthésie, intervention chirurgicale et
+                hospitalisation.
+              </p>
+              <div class="lcv-intro-note">
+                Notre priorité : votre sécurité, votre compréhension et votre
+                sérénité.
               </div>
-          </section>
+            </article>
 
+            <div class="lcv-intro-images">
+              <img
+                src="images/adult-4402808_1280.jpg"
+                alt="Consultation patient"
+              />
+              <img
+                src="images/blood-pressure-1584223_1280.jpg"
+                alt="Suivi médical"
+              />
+            </div>
+          </div>
 
-            <!-- <section class="explore-section section-padding" id="section_2">
+          <p class="lcv-intro-bottom">
+            Retrouvez ci-dessous les étapes essentielles de votre parcours au
+            sein de nos cliniques : Lyon Nord, Charcot ou Saint-Charles, ainsi
+            que les documents nécessaires à chaque rendez-vous.
+          </p>
+        </div>
+      </section>
+
+      <!-- <section class="explore-section section-padding" id="section_2">
                 <div class="container">
                     <div class="row">
 
@@ -236,155 +816,167 @@ https://templatemo.com/tm-590-topic-listing
                 </div>
             </section> -->
 
+      <section class="lcv-patient-page lcv-steps-section" id="section_3">
+        <div class="lcv-patient-container">
+          <div class="lcv-patient-header">
+            <span class="lcv-patient-kicker">Étapes clés</span>
+            <h2>Votre parcours en tant que patient</h2>
+            <p>
+              Un cheminement lisible pour préparer votre rendez-vous, votre
+              intervention et votre retour à domicile.
+            </p>
+          </div>
 
-            <section class="timeline-section section-padding" id="section_3">
-                <div class="section-overlay"></div>
-
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-12 text-center">
-                            <h2 class="text-white mb-4">Votre parcours en tant que Patient</h1>
-                        </div>
-
-                        <div class="col-lg-10 col-12 mx-auto">
-                            <div class="timeline-container">
-                                <ul class="vertical-scrollable-timeline" id="vertical-scrollable-timeline">
-                                    <div class="list-progress">
-                                        <div class="inner"></div>
-                                    </div>
-
-                                    <li>
-                                        <h4 class="text-white mb-3">Prendre Rendez-vous</h4>
-
-                                        <p class="text-white"> Pour prendre rendez vous , contactez la clinique de votre choix par téléphone ou directement <a href="contact.html" style="color: #13547A;">en ligne </a> avec le praticien de votre choix.
-                                          <br> <br>
-                                          Clinique Lyon Nord :
-                                          04 72 01 45 16 <br>
-                                          Clinique Charcot :
-                                          04 72 32 69 21 <br>
-                                          Clinique : Saint-Charles
-                                          04 72 32 69 21</p>
-
-                                        <div class="icon-holder">
-                                          <i class="bi-search"></i>
-                                        </div>
-                                    </li>
-                                    
-                                    <li>
-                                        <h4 class="text-white mb-3">Je prépare ma consultation</h4>
-
-                                        <p class="text-white">Au cours de cette première consultation, les Docteurs du Centre répondront à toutes vos interrogations. Ils établiront un diagnostic initial pour déterminer la chirurgie nécessaire
-                                          Afin de préparer au mieux votre première consultation , voici la lsite des documents médicaux et administratifs nécessaires :
-                                          <br>
-                                          • Les ordonnances <br>
-                                          • L’ensemble de vos examens radiologiques ( Avec compte rendu et CD ) <br>
-                                          • Le courrier transmis par votre médecin traitant ( Si disponible) <br>
-                                          • Carte vitale <br>
-                                          • Votre carte de tiers payant et/ou votre attestation de mutuelle <br>
-                                          • Un document attestant votre situation si vous êtes accidenté du travail ou autre <br>
-                                          • Un moyen de paiement : chèque, carte bancaire, espèces <br>
-                                        </p>
-
-                                        
-
-                                        <div class="icon-holder">
-                                          <i class="bi-bookmark"></i>
-                                        </div>
-                                    </li>
-
-
-                                    <li>
-                                      <h4 class="text-white mb-3">Je prépare mon anesthésie</h4>
-
-                                      <p class="text-white">
-
-                                        Une fois l’intervention chirurgicale fixée avec les Docteurs, un rendez-vous avec le médecin anésthesite peut être nécessaire. Cette consultation devra avoir lieu plusieurs jours avant l’intervention.
-Ce rendez-vous sera fixé par notre secrétariat en fonction de la date opératoire retenue.
-                                       </p>
-                                      <div class="icon-holder">
-                                        <i class="bi-book"></i>
-                                      </div>
-                                  </li>
-
-                                    <li>
-                                        <h4 class="text-white mb-3">Je prépare mon hospitalisation</h4>
-
-                                        <p class="text-white">
-
-                                          Votre opération chirurgicale se déroulera dans l'une des cliniques ( Lyon Nord / Charcot / Saint-Charles) <br>
-                                          Selon le type d’intervention pratiquée vous serez admis en hospitalisation ambulatoire  ou en hospitalisation. Le type d’hospitalisation sera évoqué avec vous au cours de la consultation.
-                                          <br>
-                                          <br>
-                                          Comme pour la première consultation, il vous sera demandé d’apporter plusieurs pièces administratives le jour de votre hospitalisation : <br>
-
-                                          • Carte vitale <br>
-                                          • Attestation d’assurance <br>
-                                          • Carte de tiers-payant et/ou attestation de mutuelle <br>
-                                          • Un moyen de paiement : chèque, carte bancaire, espèces <br>
-                                                                                  </p>
-                                        <div class="icon-holder">
-                                          <i class="bi-book"></i>
-                                        </div>
-
-                                        <p class="text-white">
-                                          Une intervention chirurgicale ne peut avoir lieu si le patient n’a pas signé au préalable le <strong>consentement éclairé</strong>  et le <strong>devis des honoraires chirurgicaux</strong> . Ce document l’informe de tous les risques inhérents à la chirurgie et des complications qui peuvent s’en suivre. <a style="color: #13547A;" href="https://www.france-assos-sante.org/66-millions-dimpatients/patients-vous-avez-des-droits/consentement-aux-soins/"> En savoir plus</a>
-                                        </p>
-                                    </li>
-
-                                    <li>
-                                        <h4 class="text-white mb-3">Ma sortie</h4>
-
-                                        <p class="text-white">Lors de votre sorties, deux types de documents vous seront remis : <br> <br>
-
-Médicaux  <br> <br>
-• Ordonnance  <br>
-• Compte rendu hospitalisation <br>
-• Compte rendu opératoire <br>
-• Rendez-vous de suivie opératoire <br>
-• Consignes pour guérir <br> <br>
-
-Administratifs <br> <br>
-• Bulletin de situation <br>
-• Une facture acquitté <br>
-• Un arrêt de travail (si nécessaire) <br>
-• Un bon de transport (si nécessaire)</p>
-
-                                        <div class="icon-holder">
-                                          <i class="bi-book"></i>
-                                        </div>
-                                    </li>
-
-                                    <!-- <li>
-                                        <h4 class="text-white mb-3">Mon retour à domicile</h4>
-
-                                        <p class="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi vero quisquam, rem assumenda similique voluptas distinctio, iste est hic eveniet debitis ut ducimus beatae id? Quam culpa deleniti officiis autem?</p>
-
-                                        <div class="icon-holder">
-                                          <i class="bi-book"></i>
-                                        </div>
-                                    </li> -->
-
-                                    <!-- <li>
-                                      <h4 class="text-white mb-3">Mon retour à domicile</h4>
-
-                                      <p class="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi vero quisquam, rem assumenda similique voluptas distinctio, iste est hic eveniet debitis ut ducimus beatae id? Quam culpa deleniti officiis autem?</p>
-
-                                      <div class="icon-holder">
-                                        <i class="bi-book"></i>
-                                      </div>
-                                  </li> -->
-                                </ul>
-                            </div>
-                        </div>
-
-                        
-                    </div>
+          <div class="lcv-steps-list">
+            <article class="lcv-step-card">
+              <div class="lcv-step-number">01</div>
+              <div class="lcv-step-content">
+                <h3>Prendre rendez-vous</h3>
+                <p>
+                  Pour prendre rendez-vous, contactez la clinique de votre choix
+                  par téléphone ou directement
+                  <a href="contact.html">en ligne</a> avec le praticien de votre
+                  choix.
+                </p>
+                <div class="lcv-step-contact-grid">
+                  <span><strong>Clinique Lyon Nord</strong>04 72 01 45 16</span>
+                  <span><strong>Clinique Charcot</strong>04 72 32 69 21</span>
+                  <span
+                    ><strong>Clinique Saint-Charles</strong>04 72 32 69 21</span
+                  >
                 </div>
-            </section>
+              </div>
+            </article>
 
+            <article class="lcv-step-card">
+              <div class="lcv-step-number">02</div>
+              <div class="lcv-step-content">
+                <h3>Je prépare ma consultation</h3>
+                <p>
+                  Au cours de cette première consultation, les Docteurs du
+                  Centre répondront à toutes vos interrogations. Ils établiront
+                  un diagnostic initial pour déterminer la chirurgie nécessaire.
+                </p>
+                <p>
+                  Afin de préparer au mieux votre première consultation, voici
+                  la liste des documents médicaux et administratifs nécessaires
+                  :
+                </p>
+                <ul>
+                  <li>Les ordonnances</li>
+                  <li>
+                    L’ensemble de vos examens radiologiques, avec compte rendu
+                    et CD
+                  </li>
+                  <li>
+                    Le courrier transmis par votre médecin traitant, si
+                    disponible
+                  </li>
+                  <li>Carte vitale</li>
+                  <li>
+                    Votre carte de tiers payant et/ou votre attestation de
+                    mutuelle
+                  </li>
+                  <li>
+                    Un document attestant votre situation si vous êtes accidenté
+                    du travail ou autre
+                  </li>
+                  <li>
+                    Un moyen de paiement : chèque, carte bancaire, espèces
+                  </li>
+                </ul>
+              </div>
+            </article>
 
-            <!-- <section class="faq-section section-padding" id="section_4">
+            <article class="lcv-step-card">
+              <div class="lcv-step-number">03</div>
+              <div class="lcv-step-content">
+                <h3>Je prépare mon anesthésie</h3>
+                <p>
+                  Une fois l’intervention chirurgicale fixée avec les Docteurs,
+                  un rendez-vous avec le médecin anesthésiste peut être
+                  nécessaire. Cette consultation devra avoir lieu plusieurs
+                  jours avant l’intervention.
+                </p>
+                <p>
+                  Ce rendez-vous sera fixé par notre secrétariat en fonction de
+                  la date opératoire retenue.
+                </p>
+              </div>
+            </article>
+
+            <article class="lcv-step-card">
+              <div class="lcv-step-number">04</div>
+              <div class="lcv-step-content">
+                <h3>Je prépare mon hospitalisation</h3>
+                <p>
+                  Votre opération chirurgicale se déroulera dans l'une des
+                  cliniques : Lyon Nord, Charcot ou Saint-Charles. Selon le type
+                  d’intervention pratiquée vous serez admis en hospitalisation
+                  ambulatoire ou en hospitalisation.
+                </p>
+                <p>
+                  Comme pour la première consultation, il vous sera demandé
+                  d’apporter plusieurs pièces administratives le jour de votre
+                  hospitalisation :
+                </p>
+                <ul>
+                  <li>Carte vitale</li>
+                  <li>Attestation d’assurance</li>
+                  <li>Carte de tiers-payant et/ou attestation de mutuelle</li>
+                  <li>
+                    Un moyen de paiement : chèque, carte bancaire, espèces
+                  </li>
+                </ul>
+                <div class="lcv-consent-box">
+                  Une intervention chirurgicale ne peut avoir lieu si le patient
+                  n’a pas signé au préalable le
+                  <strong>consentement éclairé</strong> et le
+                  <strong>devis des honoraires chirurgicaux</strong>.
+                  <a
+                    href="https://www.france-assos-sante.org/66-millions-dimpatients/patients-vous-avez-des-droits/consentement-aux-soins/"
+                    >En savoir plus</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="lcv-step-card">
+              <div class="lcv-step-number">05</div>
+              <div class="lcv-step-content">
+                <h3>Ma sortie</h3>
+                <p>
+                  Lors de votre sortie, deux types de documents vous seront
+                  remis :
+                </p>
+                <div class="lcv-doc-grid">
+                  <div>
+                    <h4>Médicaux</h4>
+                    <ul>
+                      <li>Ordonnance</li>
+                      <li>Compte rendu hospitalisation</li>
+                      <li>Compte rendu opératoire</li>
+                      <li>Rendez-vous de suivi opératoire</li>
+                      <li>Consignes pour guérir</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4>Administratifs</h4>
+                    <ul>
+                      <li>Bulletin de situation</li>
+                      <li>Une facture acquittée</li>
+                      <li>Un arrêt de travail, si nécessaire</li>
+                      <li>Un bon de transport, si nécessaire</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- <section class="faq-section section-padding" id="section_4">
                 <div class=" col-12 text-center">
                     <h2 class="mb-4">Nos Domaines</h2>
                 </div> 
@@ -454,8 +1046,7 @@ Administratifs <br> <br>
                 </div>
             </section> -->
 
-
-            <!-- <section>
+      <!-- <section>
                 <div class=" col-12 text-center">
                     <h2 class="mb-4">Les Documents</h2>
                 </div> 
@@ -518,82 +1109,48 @@ Administratifs <br> <br>
                   </div>
             </section> -->
 
+      <section class="lcv-patient-page lcv-urgent-section" id="section_5">
+        <div class="lcv-patient-container">
+          <div class="lcv-patient-header">
+            <span class="lcv-patient-kicker">Urgences</span>
+            <h2>Contacts utiles en cas d’urgence</h2>
+            <p>Retrouvez les coordonnées principales des établissements.</p>
+          </div>
 
-            <section class="contact-section section-padding section-bg" id="section_5" style="background-color:#C2CDDF ;">
-                <div class="container">
-                    <div class="row">
+          <div class="lcv-urgent-grid">
+            <article class="lcv-urgent-card">
+              <h3>Clinique Lyon-Nord</h3>
+              <p>65, rue des Contamines<br />69140 RILLIEUX LA PAPE</p>
+              <a href="tel:0472013830">04 72 01 38 30</a>
+            </article>
 
-                        <div class="col-lg-12 col-12 text-center">
-                            <h2 class="mb-5">Urgences</h2>
-                            
-                        </div>
+            <article class="lcv-urgent-card">
+              <h3>Clinique Charcot</h3>
+              <p>51 Rue Commandant Charcot,<br />69110 Sainte-Foy-lès-Lyon</p>
+              <a href="tel:0472326868">04 72 32 68 68</a>
+            </article>
 
-                        <div class="col-lg-3 col-md-6 col-12 mb-3 mb-lg- mb-md-0 ms-auto">
-                          <h4 class="mb-3">Clinique Lyon-Nord</h4>
+            <article class="lcv-urgent-card">
+              <h3>Clinique Saint Charles</h3>
+              <p>25 Rue de Flesselles,<br />69001 Lyon</p>
+              <a href="tel:0472102626">04 72 10 26 26</a>
+            </article>
+          </div>
 
-                          <p>65, rue des Contamines
-                            69140 RILLIEUX LA PAPE</p>
+          <div class="lcv-urgent-note">
+            <p>
+              Le service des urgences de la Polyclinique Lyon-Nord de Rillieux
+              est ouvert 24h/24.
+            </p>
+            <p>
+              Pour toute question, vous pouvez également joindre le secrétariat
+              au 04 72 02 45 10.
+            </p>
+          </div>
+        </div>
+      </section>
 
-                          <hr>
-
-                          <p class="d-flex align-items-center mb-1">
-                              <span class="me-2">Téléphone</span>
-
-                              <a href="tel: 305-240-9671" class="site-footer-link" style="color:#13547A;">
-                                  04 72 01 38 30
-                              </a>
-                          </p>
-
-                          
-                      </div>
-
-                        <div class="col-lg-3 col-md-6 col-12 mb-3 mb-lg- mb-md-0 ms-auto">
-                            <h4 class="mb-3">Clinique Charcot</h4>
-                            
-                            <p>51 Rue Commandant Charcot,
-                              69110 Sainte-Foy-lès-Lyon</p>
-
-                            <hr>
-
-                            <p class="d-flex align-items-center mb-1">
-                                <span class="me-2">Téléphone</span>
-
-                                <a href="tel: 305-240-9671" class="site-footer-link"  style="color:#13547A;">
-                                  04 72 32 68 68
-                                </a>
-                            </p>
-
-                            
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 col-12 mx-auto">
-                            <h4 class="mb-3">Clinique Saint Charles</h4>
-
-                            <p>25 Rue de Flesselles,
-                              69001 Lyon</p>
-
-                            <hr>
-
-                            <p class="d-flex align-items-center mb-1">
-                                <span class="me-2">Téléphone</span>
-
-                                <a href="tel: 110-220-3400" class="site-footer-link"  style="color:#13547A;">
-                                  04 72 10 26 26
-                                </a>
-                            </p>
-
-                            
-                        </div>
-
-                    </div>
-                    <br>
-                    <br>
-                    <p style="text-align: center;">Le service des urgences de la Polyclinique Lyon-Nord de Rillieux est ouvert 24h/24.</p>
-                    <p style="text-align: center;">Pour toute question, vous pouvez également joindre le secrétariat au 04 72 02 45 10.</p >
-                </div>
-            </section>
-
-            <!-- <div class="popular-categories">
+      <!-- <div class="popular-categories">
                 <div class="container">
                   <div class="row">
                     <div class="col-lg-12">
@@ -751,98 +1308,73 @@ Administratifs <br> <br>
                   </div>
                 </div>
               </div> -->
-        </main>
+    </main>
 
-<footer class="site-footer section-padding">
-            <ul class="nav nav-tabs" id="myTab" role="tablist"></ul>
-            <div class="container">
-                <div class="row">
+    <footer class="lcv-footer">
+      <div class="lcv-footer-container">
+        <div class="lcv-footer-brand">
+          <a class="lcv-footer-logo" href="index.html">
+            <img
+              src="images/detoure2.png"
+              alt="Logo Lyon Chirurgie Vasculaire"
+            />
+            <span>Lyon Chirurgie<br />Vasculaire</span>
+          </a>
 
-                    <div class="col-lg-3 col-12 mb-4 pb-2">
-                        <a class="navbar-brand mb-2" href="index.html">
-                            <img src="images/detoure2.png" alt="Logo" style="height: 50px;">
-                            <span>Lyon Chirurgie <br> Vasculaire</span>
-                        </a>
-                    </div>
+          <p>
+            Une équipe spécialisée en chirurgie vasculaire, présente dans
+            plusieurs établissements de la région lyonnaise.
+          </p>
+        </div>
 
-                    <div class="col-lg-3 col-md-4 col-6">
-                        <h6 class="site-footer-title mb-3">Les Chirurgiens</h6>
+        <div class="lcv-footer-col">
+          <h6>Les chirurgiens</h6>
+          <a
+            href="https://www.doctolib.fr/chirurgien-vasculaire/rillieux-la-pape/meryl-favier-de-lachomette"
+            >Dr Meryl Favier de Lachomette</a
+          >
+          <a
+            href="https://www.doctolib.fr/chirurgien-vasculaire/lyon/jana-konecna"
+            >Dr Jana Konecna</a
+          >
+          <a
+            href="https://www.doctolib.fr/chirurgien-vasculaire/rillieux-la-pape/bruno-macheda?pid=practice-31946"
+            >Dr Bruno Macheda</a
+          >
+        </div>
 
-                        <ul class="site-footer-links">
-                          <li class="site-footer-link-item">
-                              <a href="https://www.doctolib.fr/chirurgien-vasculaire/rillieux-la-pape/meryl-favier-de-lachomette" class="site-footer-link">Dr Meryl FAVIER DE LACHOMETTE</a>
-                          </li>
+        <div class="lcv-footer-col">
+          <h6>Les cliniques</h6>
+          <a href="contact.html">Clinique Charcot</a>
+          <a href="contact.html">Polyclinique Lyon Nord</a>
+          <a href="contact.html">Clinique Saint Charles</a>
+        </div>
 
-                          <li class="site-footer-link-item">
-                              <a href="https://www.doctolib.fr/chirurgien-vasculaire/lyon/jana-konecna" class="site-footer-link">Dr Jana KONECNA</a>
-                          </li>
+        <div class="lcv-footer-contact">
+          <h6>Prendre rendez-vous</h6>
+          <p>
+            Contactez le secrétariat ou prenez rendez-vous directement en ligne.
+          </p>
+          <a href="contact.html" class="lcv-footer-btn">Nous contacter</a>
+        </div>
+      </div>
 
-                          <li class="site-footer-link-item">
-                              <a href="https://www.doctolib.fr/chirurgien-vasculaire/rillieux-la-pape/bruno-macheda?pid=practice-31946" class="site-footer-link">Dr Bruno MACHEDA</a>
-                          </li>
+      <div class="lcv-footer-bottom">
+        <span>© 2026 Lyon Chirurgie Vasculaire — Tous droits réservés</span>
+        <span
+          >Site réalisé par
+          <a href="https://antoine-macheda.fr">Antoine M.</a></span
+        >
+      </div>
+    </footer>
 
-                          
-                      </ul>
-                    </div>
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/click-scroll.js"></script>
+    <script src="js/custom.js"></script>
 
-                    <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
-                        <h6 class="site-footer-title mb-3">Les Cliniques</h6>
-
-                        <ul class="site-footer-links">
-                          <li class="site-footer-link-item">
-                              <a href="contact.html" class="site-footer-link">Clinique Charcot</a>
-                              <br>
-                              <p style="font-size: 14px;" href="#">04 72 32 69 21</p>
-                          </li>
-                          <li class="site-footer-link-item">
-                              <a href="contact.html" class="site-footer-link">Polyclinique Lyon Nord</a>
-                              <p style="font-size: 14px;" href="#">04 72 01 45 16</p>
-                          </li>
-                          <li class="site-footer-link-item">
-                              <a href="contact.html" class="site-footer-link">Clinique Saint Charles</a>
-                              <p style="font-size: 14px;" href="#">04 72 32 69 21</p>
-                          </li>
-
-                          
-                      </ul>
-                    </div>
-
-                    <!-- <div class="col-lg-3 col-md-4 col-12 mt-4 mt-lg-0 ms-auto">
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            English</button>
-
-                            <ul class="dropdown-menu">
-                                <li><button class="dropdown-item" type="button">Thai</button></li>
-
-                                <li><button class="dropdown-item" type="button">Myanmar</button></li>
-
-                                <li><button class="dropdown-item" type="button">Arabic</button></li>
-                            </ul>
-                        </div>
-
-                        <p class="copyright-text mt-lg-5 mt-4">Copyright © 2048 Topic Listing Center. All rights reserved.
-                        <br><br>Design: <a rel="nofollow" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
-                        
-                    </div> -->
-
-                </div>
-            </div>
-        </footer>
-
-
-        <!-- JAVASCRIPT FILES -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/jquery.sticky.js"></script>
-        <script src="js/click-scroll.js"></script>
-        <script src="js/custom.js"></script>
-
-        
-  
-  <script src="js/animation.js"></script>
-  
-  
-
-    </body>
+    <script src="js/animation.js"></script>
+  </body>
 </html>

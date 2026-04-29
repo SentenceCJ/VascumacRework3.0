@@ -511,3 +511,296 @@ ol.gradient-list>li+li{ margin-top:2rem; }
   .palmares-rank{    font-size: clamp(15px, 1.9vw, 19px) !important; margin: 5px 0 !important; }
   .palmares-item{    margin-bottom: 16px !important; }
 }
+
+
+.lcv-news-page {
+        background: #eef6fb;
+      }
+      .lcv-palmares-section {
+        background: #eef6fb;
+        padding: 90px 0 70px;
+      }
+      .lcv-palmares-header {
+        max-width: 850px;
+        margin-bottom: 42px;
+      }
+      .lcv-kicker,
+      .lcv-small-label {
+        display: inline-block;
+        margin-bottom: 14px;
+        color: #2f83a3;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-family: "Montserrat", sans-serif;
+      }
+      .lcv-palmares-header h2 {
+        margin: 0 0 16px;
+        font-size: clamp(2rem, 4vw, 3rem);
+        color: #102f3f;
+        font-weight: 800;
+      }
+      .lcv-palmares-header p {
+        margin: 0;
+        color: #5f7280;
+        font-size: 1.05rem;
+        line-height: 1.7;
+      }
+      .lcv-palmares-grid {
+        display: grid;
+        grid-template-columns: 1.35fr 0.85fr;
+        gap: 28px;
+        align-items: stretch;
+      }
+      .lcv-card {
+        background: rgba(255, 255, 255, 0.94);
+        border: 1px solid rgba(65, 142, 170, 0.14);
+        border-radius: 28px;
+        padding: 38px;
+        box-shadow: 0 22px 55px rgba(17, 58, 80, 0.08);
+      }
+      .lcv-main-card {
+        position: relative;
+        overflow: hidden;
+      }
+      .lcv-main-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(105, 185, 200, 0.18),
+          transparent 55%
+        );
+        pointer-events: none;
+      }
+      .lcv-main-card > * {
+        position: relative;
+        z-index: 1;
+      }
+      .lcv-card h3 {
+        margin: 0 0 12px;
+        color: #103244;
+        font-size: 1.45rem;
+        font-weight: 800;
+      }
+      .lcv-card p {
+        color: #647985;
+        line-height: 1.65;
+        font-size: 1rem;
+      }
+      .lcv-year {
+        margin: 28px 0 20px;
+      }
+      .lcv-year span {
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 18px;
+        border-radius: 999px;
+        background: #2f83a3;
+        color: #fff;
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+      }
+      .lcv-ranking-list {
+        display: grid;
+        gap: 14px;
+      }
+      .lcv-ranking-item {
+        padding: 18px 20px;
+        border-radius: 18px;
+        background: #f7fbfd;
+        border: 1px solid rgba(47, 131, 163, 0.12);
+      }
+      .lcv-ranking-item strong {
+        display: block;
+        color: #14394a;
+        font-size: 1rem;
+        margin-bottom: 5px;
+      }
+      .lcv-ranking-item p {
+        margin: 0;
+        color: #2f83a3;
+        font-weight: 700;
+      }
+      .lcv-secondary-card {
+        background: linear-gradient(180deg, #fff, #f6fbfd);
+      }
+      .lcv-secondary-card ul {
+        padding: 0;
+        margin: 24px 0;
+        list-style: none;
+      }
+      .lcv-secondary-card li {
+        padding: 14px 0;
+        border-bottom: 1px solid rgba(16, 47, 63, 0.08);
+        color: #607480;
+        line-height: 1.5;
+        font-size: 0.98rem;
+      }
+      .lcv-secondary-card li strong {
+        color: #103244;
+      }
+      .lcv-source {
+        margin-top: 24px;
+        font-size: 0.85rem !important;
+        color: #81919a !important;
+      }
+      .lcv-brand-bar {
+        width: 100%;
+        overflow: hidden;
+        background: #fff;
+        padding: 16px 0;
+        border-top: 1px solid rgba(16, 47, 63, 0.08);
+        border-bottom: 1px solid rgba(16, 47, 63, 0.08);
+      }
+      .lcv-brand-track {
+        display: flex;
+        gap: 60px;
+        width: max-content;
+        animation: lcv-scroll 35s linear infinite;
+      }
+      .lcv-brand-item {
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: #2f83a3;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        font-family: "Montserrat", sans-serif;
+      }
+      .lcv-brand-item::after {
+        content: "•";
+        margin-left: 60px;
+        color: rgba(47, 131, 163, 0.35);
+      }
+      .lcv-brand-bar:hover .lcv-brand-track {
+        animation-play-state: paused;
+      }
+      @keyframes lcv-scroll {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+      .lcv-team-update {
+        background: #fff;
+        padding: 90px 0;
+      }
+      .lcv-team-card {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 40px;
+        align-items: center;
+        background: linear-gradient(180deg, #fff, #f6fbfd);
+        border-radius: 28px;
+        padding: 50px;
+        border: 1px solid rgba(16, 47, 63, 0.08);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+      }
+      .lcv-team-text h2 {
+        margin: 0 0 18px;
+        font-size: clamp(1.8rem, 3vw, 2.4rem);
+        font-weight: 800;
+        color: #102f3f;
+      }
+      .lcv-team-text p {
+        color: #5f7280;
+        line-height: 1.7;
+        margin-bottom: 16px;
+        font-size: 1rem;
+      }
+      .lcv-team-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 26px;
+      }
+      .lcv-team-btn {
+        display: inline-block;
+        padding: 12px 20px;
+        background: #2f83a3;
+        color: #fff !important;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 700;
+        font-family: "Montserrat", sans-serif;
+      }
+      .lcv-team-btn:hover {
+        background: #256c86;
+        color: #fff !important;
+      }
+      .lcv-team-note {
+        display: inline-flex;
+        align-items: center;
+        padding: 12px 18px;
+        border-radius: 999px;
+        background: rgba(47, 131, 163, 0.08);
+        color: #2f83a3;
+        font-weight: 700;
+        font-size: 0.9rem;
+      }
+      .lcv-team-visual {
+        display: flex;
+        justify-content: center;
+      }
+      .lcv-doctor-card {
+        width: 100%;
+        max-width: 280px;
+        min-height: 320px;
+        border-radius: 24px;
+        background: linear-gradient(135deg, #dfeff6, #cfe3ed);
+        border: 1px solid rgba(47, 131, 163, 0.12);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 28px;
+        color: #456c7e;
+      }
+      .lcv-doctor-icon {
+        width: 82px;
+        height: 82px;
+        border-radius: 50%;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        color: #2f83a3;
+        font-size: 2.4rem;
+        box-shadow: 0 16px 35px rgba(17, 58, 80, 0.08);
+      }
+      .lcv-doctor-card strong {
+        color: #103244;
+        font-size: 1.05rem;
+        margin-bottom: 8px;
+      }
+      .lcv-doctor-card span {
+        color: #6a8491;
+        line-height: 1.5;
+      }
+      @media (max-width: 991px) {
+        .lcv-palmares-section,
+        .lcv-team-update {
+          padding: 60px 0;
+        }
+        .lcv-palmares-grid,
+        .lcv-team-card {
+          grid-template-columns: 1fr;
+        }
+        .lcv-card,
+        .lcv-team-card {
+          padding: 28px;
+          border-radius: 22px;
+        }
+        .lcv-doctor-card {
+          max-width: 100%;
+          min-height: 240px;
+        }
+      }
