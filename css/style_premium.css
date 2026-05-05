@@ -1418,3 +1418,198 @@ ol.gradient-list>li+li{ margin-top:2rem; }
         text-align: center;
         font-size: 1.2rem;
       }
+
+
+      .lcv-dressing-news {
+  padding: 90px 0;
+  background: #ffffff;
+}
+
+.lcv-dressing-card {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 38px;
+  background: linear-gradient(180deg, #ffffff, #f6fbfd);
+  border: 1px solid rgba(47, 131, 163, 0.14);
+  border-radius: 34px;
+  padding: 46px;
+  box-shadow: 0 28px 75px rgba(17, 58, 80, 0.12);
+}
+
+.lcv-dressing-content h2 {
+  margin: 0 0 22px;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(2.3rem, 5vw, 4.2rem);
+  font-weight: 800;
+  line-height: 0.95;
+  color: #102f3f;
+  text-transform: uppercase;
+}
+
+.lcv-dressing-content h2 strong {
+  color: #078b98;
+}
+
+.lcv-dressing-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+  padding: 14px 20px;
+  border-radius: 18px;
+  background: #078b98;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.lcv-dressing-badge i {
+  font-size: 1.5rem;
+}
+
+.lcv-dressing-content p,
+.lcv-dressing-info p {
+  color: #647985;
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+.lcv-dressing-content strong,
+.lcv-objective-item strong,
+.lcv-dressing-info strong {
+  color: #078b98;
+}
+
+.lcv-dressing-visual img {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  border-radius: 28px;
+  box-shadow: 0 20px 50px rgba(17, 58, 80, 0.12);
+}
+
+.lcv-objectives {
+  grid-column: 1 / -1;
+  padding: 30px;
+  border-radius: 28px;
+  background: #ffffff;
+  border: 1px solid rgba(47, 131, 163, 0.16);
+}
+
+.lcv-objectives h3 {
+  display: inline-block;
+  margin: 0 0 22px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: #078b98;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.lcv-objective-item {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(47, 131, 163, 0.12);
+}
+
+.lcv-objective-item:last-child {
+  border-bottom: 0;
+}
+
+.lcv-objective-item span {
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+  background: #eef6fb;
+  color: #078b98;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+}
+
+.lcv-objective-item p {
+  margin: 0;
+  color: #647985;
+  line-height: 1.65;
+}
+
+.lcv-dressing-info {
+  grid-column: 1 / -1;
+}
+
+.lcv-schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.lcv-schedule-card {
+  padding: 24px;
+  border-radius: 22px;
+  background: #ffffff;
+  border: 1px solid rgba(47, 131, 163, 0.14);
+  text-align: center;
+}
+
+.lcv-schedule-card span {
+  display: block;
+  margin-bottom: 12px;
+  color: #078b98;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.lcv-schedule-card strong {
+  display: block;
+  color: #102f3f;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+.lcv-schedule-card p {
+  margin: 6px 0 0;
+  color: #102f3f;
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.lcv-open-badge {
+  margin-top: 20px;
+  padding: 16px 20px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #078b98, #2f83a3);
+  color: #ffffff;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .lcv-dressing-card {
+    grid-template-columns: 1fr;
+    padding: 30px;
+  }
+
+  .lcv-schedule-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lcv-dressing-visual img {
+    min-height: 260px;
+  }
+}
