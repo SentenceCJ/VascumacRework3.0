@@ -32,6 +32,279 @@
     <!-- <link rel="stylesheet" href="css/templatemo-plot-listing.css"> -->
     <!--  <link rel="stylesheet" href="css/animated.css"> -->
 
+    <style>
+      .lcv-palmares-premium {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .lcv-podium-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+        margin: 42px 0 28px;
+      }
+
+      .lcv-podium-card {
+        position: relative;
+        min-height: 230px;
+        padding: 30px;
+        border-radius: 30px;
+        background: #ffffff;
+        border: 1px solid rgba(10, 35, 66, 0.08);
+        box-shadow: 0 24px 60px rgba(10, 35, 66, 0.09);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+      }
+
+      .lcv-podium-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0.16;
+        pointer-events: none;
+      }
+
+      .lcv-gold-card::before {
+        background: radial-gradient(
+          circle at 80% 15%,
+          #d7a63b,
+          transparent 34%
+        );
+      }
+
+      .lcv-silver-card::before {
+        background: radial-gradient(
+          circle at 80% 15%,
+          #aab3c2,
+          transparent 34%
+        );
+      }
+
+      .lcv-bronze-card::before {
+        background: radial-gradient(
+          circle at 80% 15%,
+          #9f714d,
+          transparent 34%
+        );
+      }
+
+      .lcv-medal-badge {
+        width: fit-content;
+        padding: 9px 15px;
+        border-radius: 999px;
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #102033;
+      }
+
+      .lcv-medal-badge.lcv-gold {
+        background: linear-gradient(135deg, #fff4c7, #d7a63b);
+        box-shadow: 0 12px 30px rgba(215, 166, 59, 0.28);
+      }
+
+      .lcv-medal-badge.lcv-silver {
+        background: linear-gradient(135deg, #f7f8fb, #aab3c2);
+        box-shadow: 0 12px 30px rgba(145, 154, 169, 0.22);
+      }
+
+      .lcv-medal-badge.lcv-bronze {
+        background: linear-gradient(135deg, #f5ddc8, #9f714d);
+        color: #ffffff;
+        box-shadow: 0 12px 30px rgba(159, 113, 77, 0.2);
+      }
+
+      .lcv-rank-label {
+        display: block;
+        margin-bottom: 8px;
+        color: #6d7a8c;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+
+      .lcv-podium-card h3 {
+        margin: 0 0 10px;
+        color: #102033;
+        font-size: 1.35rem;
+      }
+
+      .lcv-podium-card p {
+        margin: 0;
+        color: #526174;
+      }
+
+      .lcv-rank-number {
+        position: absolute;
+        right: 24px;
+        bottom: 12px;
+        font-size: 4.8rem;
+        line-height: 1;
+        font-weight: 800;
+        color: rgba(16, 32, 51, 0.07);
+      }
+
+      .lcv-card-topline {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 24px;
+      }
+
+      .lcv-palmares-detail-grid {
+        align-items: stretch;
+      }
+
+      .lcv-enhanced-ranking-list {
+        display: grid;
+        gap: 14px;
+      }
+
+      .lcv-enhanced-ranking-list .lcv-ranking-item {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 16px;
+        padding: 18px;
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.76);
+        border: 1px solid rgba(10, 35, 66, 0.08);
+      }
+
+      .lcv-highlight-gold {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 244, 199, 0.92),
+          rgba(255, 255, 255, 0.86)
+        ) !important;
+        border-color: rgba(215, 166, 59, 0.35) !important;
+      }
+
+      .lcv-highlight-silver {
+        background: linear-gradient(
+          135deg,
+          rgba(246, 247, 250, 0.96),
+          rgba(255, 255, 255, 0.86)
+        ) !important;
+        border-color: rgba(170, 179, 194, 0.38) !important;
+      }
+
+      .lcv-position-chip {
+        width: 58px;
+        height: 58px;
+        border-radius: 18px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 900;
+        font-size: 1rem;
+        color: #102033;
+      }
+
+      .lcv-position-chip.gold {
+        background: linear-gradient(135deg, #fff4c7, #d7a63b);
+      }
+
+      .lcv-position-chip.silver {
+        background: linear-gradient(135deg, #ffffff, #aab3c2);
+      }
+
+      .lcv-position-chip.top {
+        background: #eef3f8;
+        color: #26415f;
+      }
+
+      .lcv-ranking-item p span {
+        font-weight: 700;
+        color: #26415f;
+      }
+
+      .lcv-medal-text {
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(16, 32, 51, 0.06);
+        color: #26415f;
+        font-size: 0.78rem;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      .lcv-clinic-score {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 18px 0;
+        border-bottom: 1px solid rgba(10, 35, 66, 0.1);
+      }
+
+      .lcv-clinic-score strong {
+        display: block;
+        color: #102033;
+        margin-bottom: 4px;
+      }
+
+      .lcv-clinic-score p {
+        margin: 0;
+        color: #526174;
+      }
+
+      .lcv-score-badge {
+        flex: 0 0 auto;
+        padding: 9px 12px;
+        border-radius: 999px;
+        font-size: 0.76rem;
+        font-weight: 800;
+        color: #102033;
+        background: linear-gradient(135deg, #fff4c7, #d7a63b);
+      }
+
+      .lcv-score-badge.silver {
+        background: linear-gradient(135deg, #ffffff, #aab3c2);
+      }
+
+      .lcv-mini-palmares {
+        margin-top: 24px;
+      }
+
+      @media (max-width: 991px) {
+        .lcv-podium-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .lcv-enhanced-ranking-list .lcv-ranking-item {
+          grid-template-columns: auto 1fr;
+        }
+
+        .lcv-medal-text {
+          grid-column: 2;
+          width: fit-content;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .lcv-podium-card {
+          min-height: 200px;
+          padding: 24px;
+        }
+
+        .lcv-rank-number {
+          font-size: 3.6rem;
+        }
+
+        .lcv-card-topline,
+        .lcv-clinic-score {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
     <!--
 
 TemplateMo 590 topic listing
@@ -277,55 +550,139 @@ https://templatemo.com/tm-590-topic-listing
       </section> -->
 
       <section class="lcv-news-page">
-        <section class="lcv-palmares-section">
+        <section class="lcv-palmares-section lcv-palmares-premium">
           <div class="container">
             <div class="lcv-palmares-header">
               <span class="lcv-kicker">Classement Mag2Lyon</span>
-              <h2>Palmarès local en chirurgie vasculaire</h2>
+              <h2>Nos cliniques distinguées au palmarès local</h2>
               <p>
-                Un aperçu des établissements en tête sur les spécialités
-                vasculaires, avec une mise en avant des classements 2026 et un
-                rappel du palmarès 2025.
+                Une lecture plus visuelle des positions obtenues par nos
+                établissements, avec une mise en avant immédiate des premières
+                places et des spécialités concernées.
               </p>
             </div>
 
-            <div class="lcv-palmares-grid">
-              <article class="lcv-card lcv-main-card">
-                <h3>En tête sur nos spécialités</h3>
-                <p>
-                  Classements par spécialité, basés sur l’activité et les
-                  indicateurs de qualité et sécurité.
-                </p>
-                <div class="lcv-year"><span>2026</span></div>
-                <div class="lcv-ranking-list">
-                  <div class="lcv-ranking-item">
-                    <strong>Varices</strong>
-                    <p>#1 Lyon Nord · #2 Charcot</p>
+            <div class="lcv-podium-grid">
+              <article class="lcv-podium-card lcv-gold-card">
+                <div class="lcv-medal-badge lcv-gold">OR</div>
+                <div>
+                  <span class="lcv-rank-label">1ère place</span>
+                  <h3>Polyclinique Lyon Nord</h3>
+                  <p>Classée #1 en Varices</p>
+                </div>
+                <span class="lcv-rank-number">#1</span>
+              </article>
+
+              <article class="lcv-podium-card lcv-silver-card">
+                <div class="lcv-medal-badge lcv-silver">ARGENT</div>
+                <div>
+                  <span class="lcv-rank-label">2ème place</span>
+                  <h3>Clinique Charcot</h3>
+                  <p>#2 en Varices · #2 en Artères — endoscopie</p>
+                </div>
+                <span class="lcv-rank-number">#2</span>
+              </article>
+
+              <article class="lcv-podium-card lcv-bronze-card">
+                <div class="lcv-medal-badge lcv-bronze">TOP 5</div>
+                <div>
+                  <span class="lcv-rank-label">4ème place</span>
+                  <h3>Polyclinique Lyon Nord</h3>
+                  <p>Classée #4 en Carotides</p>
+                </div>
+                <span class="lcv-rank-number">#4</span>
+              </article>
+            </div>
+
+            <div class="lcv-palmares-grid lcv-palmares-detail-grid">
+              <article class="lcv-card lcv-main-card lcv-ranking-card">
+                <div class="lcv-card-topline">
+                  <h3>Classements 2026 par spécialité</h3>
+                  <div class="lcv-year"><span>2026</span></div>
+                </div>
+
+                <div class="lcv-ranking-list lcv-enhanced-ranking-list">
+                  <div class="lcv-ranking-item lcv-highlight-gold">
+                    <div class="lcv-position-chip gold">#1</div>
+                    <div>
+                      <strong>Varices</strong>
+                      <p><span>Polyclinique Lyon Nord</span></p>
+                    </div>
+                    <span class="lcv-medal-text">1ère place</span>
                   </div>
-                  <div class="lcv-ranking-item">
-                    <strong>Artères — endoscopie</strong>
-                    <p>#2 Charcot</p>
+
+                  <div class="lcv-ranking-item lcv-highlight-silver">
+                    <div class="lcv-position-chip silver">#2</div>
+                    <div>
+                      <strong>Varices</strong>
+                      <p><span>Clinique Charcot</span></p>
+                    </div>
+                    <span class="lcv-medal-text">2ème place</span>
                   </div>
-                  <div class="lcv-ranking-item">
-                    <strong>Carotides</strong>
-                    <p>#4 Lyon Nord</p>
+
+                  <div class="lcv-ranking-item lcv-highlight-silver">
+                    <div class="lcv-position-chip silver">#2</div>
+                    <div>
+                      <strong>Artères — endoscopie</strong>
+                      <p><span>Clinique Charcot</span></p>
+                    </div>
+                    <span class="lcv-medal-text">2ème place</span>
                   </div>
+
                   <div class="lcv-ranking-item">
-                    <strong>Chirurgie majeure de revascularisation</strong>
-                    <p>#7 Lyon Nord</p>
+                    <div class="lcv-position-chip top">#4</div>
+                    <div>
+                      <strong>Carotides</strong>
+                      <p><span>Polyclinique Lyon Nord</span></p>
+                    </div>
+                    <span class="lcv-medal-text">Top 5</span>
+                  </div>
+
+                  <div class="lcv-ranking-item">
+                    <div class="lcv-position-chip top">#7</div>
+                    <div>
+                      <strong>Chirurgie majeure de revascularisation</strong>
+                      <p><span>Polyclinique Lyon Nord</span></p>
+                    </div>
+                    <span class="lcv-medal-text">Top 10</span>
                   </div>
                 </div>
               </article>
 
-              <article class="lcv-card lcv-secondary-card">
-                <span class="lcv-small-label">Rappel</span>
-                <h3>Palmarès 2025</h3>
-                <ul>
-                  <li><strong>Varices</strong> — #1 Lyon Nord · #2 Charcot</li>
-                  <li><strong>Artères</strong> — #2 Charcot</li>
-                  <li><strong>Carotides</strong> — #4 Lyon Nord</li>
-                  <li><strong>Revascularisation</strong> — #7 Lyon Nord</li>
-                </ul>
+              <article
+                class="lcv-card lcv-secondary-card lcv-clinic-summary-card"
+              >
+                <span class="lcv-small-label">Synthèse</span>
+                <h3>Les établissements les plus représentés</h3>
+
+                <div class="lcv-clinic-score">
+                  <div>
+                    <strong>Polyclinique Lyon Nord</strong>
+                    <p>1 première place · 1 top 5 · 1 top 10</p>
+                  </div>
+                  <span class="lcv-score-badge">3 distinctions</span>
+                </div>
+
+                <div class="lcv-clinic-score">
+                  <div>
+                    <strong>Clinique Charcot</strong>
+                    <p>2 deuxièmes places</p>
+                  </div>
+                  <span class="lcv-score-badge silver">2 distinctions</span>
+                </div>
+
+                <div class="lcv-mini-palmares">
+                  <span class="lcv-small-label">Rappel 2025</span>
+                  <ul>
+                    <li>
+                      <strong>Varices</strong> — #1 Lyon Nord · #2 Charcot
+                    </li>
+                    <li><strong>Artères</strong> — #2 Charcot</li>
+                    <li><strong>Carotides</strong> — #4 Lyon Nord</li>
+                    <li><strong>Revascularisation</strong> — #7 Lyon Nord</li>
+                  </ul>
+                </div>
+
                 <p class="lcv-source">
                   Source : Mag2Lyon — spécial santé 2024-2025.
                 </p>
